@@ -1240,6 +1240,22 @@ body.mtopen{overflow:hidden}
 .mt-pop[hidden]{display:none}.mt-pop b{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);padding:2px 6px}.mt-pop button{text-align:left;border:1px solid rgba(255,255,255,.12);background:transparent;color:#fff;padding:9px 12px;border-radius:12px;cursor:pointer;font:inherit;font-weight:700}.mt-pop button.on{background:#1f66f0;border-color:#1f66f0}.mt-pop button small{display:block;font-weight:400;font-size:.72rem;opacity:.75;margin-top:2px}
 .mt-end{margin:auto;text-align:center;max-width:420px;padding:20px;display:grid;gap:10px;justify-items:center}.mt-end>span{width:68px;height:68px;border-radius:50%;background:rgba(229,72,77,.2);color:#ff8a8e;display:grid;place-items:center}.mt-end>span .i{width:30px;height:30px}.mt-end h2{margin:0;font:800 1.6rem var(--display);color:#fff}.mt-end p{margin:0;color:rgba(255,255,255,.75)}
 @media(max-width:700px){.mt-top{padding:10px 14px}.mt-stage{margin:0 10px;border-radius:18px}.mt-b{width:62px}.mt-b .i{width:46px;height:46px;padding:12px}.mt-dock{gap:4px;padding:10px 8px 16px}}
+
+/* apresentação de PDF na reunião */
+.mt-doc{position:absolute;inset:0;z-index:2;background:radial-gradient(700px 400px at 40% 0,#12306a55,transparent 70%),#0a1730;display:flex;flex-direction:column}
+.mt-doc[hidden]{display:none}
+.mt-dv{flex:1;min-height:0;margin-right:200px;position:relative;display:grid;place-items:center;overflow:hidden}
+.mt-cw{position:relative;line-height:0;box-shadow:0 20px 50px -20px rgba(0,0,0,.8);background:var(--k-ffffff)}.mt-cw canvas{display:block;background:var(--k-ffffff)}.mt-cw.lz{cursor:crosshair}
+.mt-ls{position:absolute;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#ff2d3d;box-shadow:0 0 0 4px rgba(255,45,61,.35),0 0 18px 6px rgba(255,45,61,.55);pointer-events:none;transition:left .06s linear,top .06s linear}.mt-ls[hidden]{display:none}
+.mt-rx{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.6);padding:10px 18px;border-radius:99px;font-size:.88rem;color:#fff}.mt-rx[hidden]{display:none}
+.mt-dc{display:flex;gap:8px;justify-content:center;align-items:center;padding:8px 12px 12px;color:#fff;font-size:.85rem;flex-wrap:wrap}
+.mt-dc span{min-width:84px;text-align:center;font-weight:700;opacity:.9}
+.mt-dc button{border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:99px;padding:8px 14px;cursor:pointer;font:inherit;font-weight:700;display:inline-flex;align-items:center;gap:6px}.mt-dc button:hover{background:rgba(255,255,255,.26)}.mt-dc button .i{width:18px;height:18px}
+.mt-dc button.on{background:#ff2d3d}.mt-dc button.stop{background:rgba(229,72,77,.3);box-shadow:inset 0 0 0 1.5px #e5484d}
+.mt-stage.pres .mt-wait{display:none}
+.mt-stage.pres #mtr{inset:auto;top:12px;right:12px;width:176px;height:110px;border-radius:14px;object-fit:cover;z-index:3;border:2px solid rgba(255,255,255,.25);box-shadow:0 12px 30px -10px rgba(0,0,0,.7)}
+.mt-stage.pres .mt-pip{top:134px;bottom:auto;right:12px;width:176px;min-width:0;height:110px;aspect-ratio:auto}
+@media(max-width:700px){.mt-dv{margin-right:0;margin-top:92px}.mt-stage.pres #mtr{width:132px;height:82px;right:auto;left:10px}.mt-stage.pres .mt-pip{width:132px;height:82px;top:12px;right:10px}}
 /* página do convidado */
 #mtj{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(800px 500px at 20% 0,var(--k-dfe9ff),transparent 60%),radial-gradient(700px 500px at 100% 100%,var(--k-fff9a8),transparent 60%),var(--k-f5f8ff)}
 .mj-c{width:min(100%,460px);background:var(--k-ffffff);border-radius:26px;padding:28px;box-shadow:0 40px 80px -40px rgba(15,42,92,.5);display:grid;gap:12px}
@@ -1264,7 +1280,7 @@ html[data-theme=night]{--k-ffffff:#0f2144;--k-fffeeb:#4e4a0e;--k-e3f4ea:#264834;
 #spl,#prt,.pvx,#tv,html[data-theme=night] #spl,html[data-theme=night] #prt,html[data-theme=night] .pvx,html[data-theme=night] #tv{--k-ffffff:#ffffff;--k-fffeeb:#fffeeb;--k-e3f4ea:#e3f4ea;--k-fde3e1:#fde3e1;--k-fff0d6:#fff0d6;--k-e9ecf1:#e9ecf1;--k-f5f8fd:#f5f8fd;--k-edf1f9:#edf1f9;--k-f6f9fe:#f6f9fe;--k-e3eaf7:#e3eaf7;--k-e6edf9:#e6edf9;--k-d5e2fa:#d5e2fa;--k-c3cde0:#c3cde0;--k-e4eaf5:#e4eaf5;--k-f8fafe:#f8fafe;--k-e5ecf8:#e5ecf8;--k-fafcff:#fafcff;--k-fff7d6:#fff7d6;--k-dbdbdb:#dbdbdb;--k-efefef:#efefef;--k-fafafa:#fafafa;--k-fafaf6:#fafaf6;--k-f3f4ef:#f3f4ef;--k-f1f2ec:#f1f2ec;--k-e9ebe3:#e9ebe3;--k-f1f3f8:#f1f3f8;--k-fdf3f2:#fdf3f2;--k-f6cfcb:#f6cfcb;--k-f6f9ff:#f6f9ff;--k-fff4f3:#fff4f3;--k-f5f8fe:#f5f8fe;--k-e0f5ec:#e0f5ec;--k-fde7e5:#fde7e5;--k-fff1d6:#fff1d6;--k-e8eef9:#e8eef9;--k-f1f6ff:#f1f6ff;--k-eaf1fd:#eaf1fd;--k-e3ebf8:#e3ebf8;--k-f4f8ff:#f4f8ff;--k-edf2fb:#edf2fb;--k-e6edf8:#e6edf8;--k-e8effb:#e8effb;--k-e3eaf6:#e3eaf6;--k-e8eef8:#e8eef8;--k-cdd6e8:#cdd6e8;--k-eaf2ff:#eaf2ff;--k-b9cff6:#b9cff6;--k-fff5f4:#fff5f4;--k-fdeee6:#fdeee6;--k-ece9fb:#ece9fb;--k-f3f7ff:#f3f7ff;--k-fff6f1:#fff6f1;--k-f6f4ff:#f6f4ff;--k-fff8dc:#fff8dc;--k-fffbe9:#fffbe9;--k-cfe0fd:#cfe0fd;--k-eef2fa:#eef2fa;--k-fdeceb:#fdeceb;--k-fff3d9:#fff3d9;--k-e6f6ee:#e6f6ee;--k-fff4dc:#fff4dc;--k-dbe7fb:#dbe7fb;--k-e3edff:#e3edff;--k-fff7a6:#fff7a6;--k-fffdea:#fffdea;--k-cfdcf5:#cfdcf5;--k-c4d6f7:#c4d6f7;--k-e3e8f0:#e3e8f0;--k-e9f0ff:#e9f0ff;--k-fff9a8:#fff9a8;--k-cfd9ee:#cfd9ee;--k-e5edfb:#e5edfb;--k-ffc39a:#ffc39a;--k-b9cdf5:#b9cdf5;--k-fff6dd:#fff6dd;--k-fff0c2:#fff0c2;--k-dfe9ff:#dfe9ff;--k-f5f8ff:#f5f8ff;--k-d5deee:#d5deee;--k-8a5a00:#8a5a00;--k-000000:#000000;--k-262626:#262626;--k-16233b:#16233b;--k-0f2a5c:#0f2a5c;--k-34425a:#34425a;--k-10244a:#10244a;--k-0b1d40:#0b1d40;--k-0f7a50:#0f7a50;--k-b3261e:#b3261e;--k-47608f:#47608f;--k-1a3a78:#1a3a78;--k-c24d1c:#c24d1c;--k-6b5b12:#6b5b12;--k-6b5b00:#6b5b00;--k-071327:#071327;--k-3b1b05:#3b1b05;--k-0a8a3c:#0a8a3c;--k-5b6b85:#5b6b85;--kt-8a5a00:#8a5a00;--kt-000000:#000000;--kt-262626:#262626;--kt-16233b:#16233b;--kt-0f2a5c:#0f2a5c;--kt-34425a:#34425a;--kt-10244a:#10244a;--kt-0b1d40:#0b1d40;--kt-0f7a50:#0f7a50;--kt-b3261e:#b3261e;--kt-47608f:#47608f;--kt-1a3a78:#1a3a78;--kt-c24d1c:#c24d1c;--kt-6b5b12:#6b5b12;--kt-6b5b00:#6b5b00;--kt-071327:#071327;--kt-3b1b05:#3b1b05;--kt-0a8a3c:#0a8a3c;--kt-5b6b85:#5b6b85;}
 </style></head><body><div id="app"></div><div id="prt"></div>
 <script>
-const BUILD="07/11 13h43",BP_VER="1.0";
+const BUILD="07/11 14h07",BP_VER="1.0";
 'use strict';
 /* ===================== Blueprint · núcleo ===================== */
 const FB={apiKey:'AIzaSyAKt9bzn2tyCfIkllZ6l4I_VB_M4ky5fIU',db:'https://owl-crm-2026-default-rtdb.firebaseio.com'};
@@ -2972,7 +2988,8 @@ Object.assign(ICONS,{
  micoff:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M3 3l18 18"/>',
  camon:'<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/>',
  camoff:'<path d="M3 3l18 18M7 6h7a2 2 0 012 2v5M16 10l5-3v10l-5-3M3 8v8a2 2 0 002 2h9"/>',
- screen:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+ pdf:'<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h4"/>',chl:'<path d="M15 5l-7 7 7 7"/>',chr:'<path d="M9 5l7 7-7 7"/>',laser:'<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>',
+  screen:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
  hang:'<path d="M3 14c5-4.5 13-4.5 18 0l-2 3-3.2-1.2v-2.6c-2.4-.8-4-.8-6.6 0v2.6L5 17z"/>',
  key:'<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3"/>',
  shield2:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>'
@@ -3082,8 +3099,10 @@ function mtUi(st){
  <div class="mt-stage"><video id="mtr" autoplay playsinline></video>
   <div class="mt-wait" id="mtw"><div class="mt-av"><i></i><span>${esc(ini(host?'Convidado':st.hostName||'Anfitrião'))}</span></div><h2 id="mtwt">${host?'Aguardando o convidado entrar…':'Aguardando o anfitrião…'}</h2><p id="mtwp">${host?'Envie o link e a senha abaixo. A chamada começa sozinha quando a pessoa entrar.':'Assim que ele estiver na sala, a chamada começa.'}</p>
    ${host?`<div class="mt-inv"><div><small>Link</small><b>${esc(mtLink(st.id))}</b></div><div><small>Senha</small><b>${esc(mtShow(st.pw||'————————'))}</b></div><button type="button" class="btn sm" data-a="mtCopy">${ic('copy')}Copiar convite</button></div>`:''}</div>
-  <div class="mt-pip" id="mtp"><video id="mtl" autoplay playsinline muted></video><span id="mtpn">Você</span></div><div class="mt-tt" id="mttt" hidden></div></div>
- <div class="mt-dock"><button type="button" class="mt-b" id="mtbm" data-a="mtMic" aria-label="Microfone" title="Ligar ou desligar o microfone">${ic('mic')}<small>Microfone</small></button><button type="button" class="mt-b" id="mtbc" data-a="mtCam" aria-label="Câmera" title="Ligar ou desligar a câmera">${ic('camon')}<small>Câmera</small></button><button type="button" class="mt-b" id="mtbs" data-a="mtScr" aria-label="Compartilhar tela" title="Mostrar a sua tela">${ic('screen')}<small>Tela</small></button>
+  <div class="mt-pip" id="mtp"><video id="mtl" autoplay playsinline muted></video><span id="mtpn">Você</span></div><div class="mt-tt" id="mttt" hidden></div>
+  <div class="mt-doc" id="mtdoc" hidden><div class="mt-dv" id="mtdv"><div class="mt-cw" id="mtcw"><canvas id="mtcv"></canvas><i class="mt-ls" id="mtls" hidden></i></div><div class="mt-rx" id="mtrx" hidden></div></div>
+   <div class="mt-dc" id="mtdc">${host?`<button type="button" data-a="mtPg" data-d="-1" aria-label="Página anterior" title="Página anterior (←)">${ic('chl')}</button>`:''}<span id="mtpn2">–</span>${host?`<button type="button" data-a="mtPg" data-d="1" aria-label="Próxima página" title="Próxima página (→)">${ic('chr')}</button><button type="button" id="mtbl" data-a="mtLaser" aria-label="Apontador" title="Apontador: mostra um ponto vermelho para o convidado">${ic('laser')}</button><button type="button" class="stop" data-a="mtPdf">Parar apresentação</button>`:''}</div></div></div>
+ <div class="mt-dock"><button type="button" class="mt-b" id="mtbm" data-a="mtMic" aria-label="Microfone" title="Ligar ou desligar o microfone">${ic('mic')}<small>Microfone</small></button><button type="button" class="mt-b" id="mtbc" data-a="mtCam" aria-label="Câmera" title="Ligar ou desligar a câmera">${ic('camon')}<small>Câmera</small></button>${host?`<button type="button" class="mt-b" id="mtbp" data-a="mtPdf" aria-label="Apresentar um PDF" title="Escolher um PDF e mostrar para o convidado">${ic('pdf')}<small>Apresentar</small></button><input type="file" id="mtpf" accept="application/pdf,.pdf" hidden>`:''}
   <div class="mt-qm"><button type="button" class="mt-b" data-a="mtQm" aria-label="Qualidade" title="Qualidade do vídeo">${ic('gear')}<small id="mtql">HD</small></button><div class="mt-pop" id="mtqp" hidden><b>Qualidade do vídeo</b><button type="button" data-a="mtQ" data-q="hd" class="on">HD · 720p<small>Mais leve, ótimo para a maioria das redes</small></button><button type="button" data-a="mtQ" data-q="fhd">Full HD · 1080p<small>Mais nítido, usa mais internet</small></button></div></div>
   <button type="button" class="mt-b" data-a="mtFs" aria-label="Tela cheia" title="Tela cheia">${ic('eye')}<small>Tela cheia</small></button>
   <button type="button" class="mt-b end" data-a="mtLeave" aria-label="Sair da reunião">${ic('hang')}<small>${host?'Sair':'Sair'}</small></button>${host?`<button type="button" class="mt-b endall" data-a="mtEnd" aria-label="Encerrar para todos">${ic('x')}<small>Encerrar</small></button>`:''}</div>`}
@@ -3093,7 +3112,7 @@ async function mtRun(o){
  const st=MT={...o,cid:mtRand(12,M_ID),seen:new Set(),pc:null,sess:null,gc:null,q:'hd',scr:null,t0:0,iv:[],alive:true,miss:0,hostSeen:Date.now(),conn:false,names:{}};
  const root=document.createElement('div');root.id=st.role=='h'?'mt':'mtg';root.className='mtroot';root.innerHTML=mtUi(st);document.body.appendChild(root);st.root=root;document.body.classList.add('mtopen');
  const md=await mtMedia('hd');st.local=md.s;if(md.err)mtTip(md.err);
- const lv=$('#mtl');if(lv)lv.srcObject=st.local;mtBtns();
+ const lv=$('#mtl');if(lv)lv.srcObject=st.local;mtBtns();const pf=$('#mtpf');if(pf)pf.addEventListener('change',()=>mtPdfPick(pf.files[0]));
  try{await mtJoin();st.joined=true}catch(e){return mtEnd(e&&e.full?'A sala está cheia: só 2 pessoas por chamada.':'Não foi possível entrar na sala agora. Confira a internet e tente de novo.',true)}
  st.iv.push(setInterval(()=>mtPoll(),700),setInterval(()=>mtBeat(),5000),setInterval(()=>mtTick(),1000));
  mtPoll()}
@@ -3128,7 +3147,7 @@ function mtPn(){const st=MT;if(!st)return;const o=st.role=='h'?st.names.g:st.nam
 function mtWaiting(t,p){const w=$('#mtw');if(!w)return;w.classList.remove('off');const a=$('#mtwt'),b=$('#mtwp');if(a)a.textContent=t;if(b)b.textContent=p;mtStat(t.replace('…',''))}
 
 /* ---------- WebRTC ---------- */
-function mtNewPc(){const st=MT;mtClosePc();const pc=new RTCPeerConnection({iceServers:st.ice||mtIce(),bundlePolicy:'max-bundle'});st.pc=pc;
+function mtNewPc(){const st=MT;mtClosePc();const pc=new RTCPeerConnection({iceServers:st.ice||mtIce(),bundlePolicy:'max-bundle'});st.pc=pc;mtDcNew(pc);
  if(st.role=='h'){const ta=pc.addTransceiver('audio',{direction:'sendrecv'}),tv=pc.addTransceiver('video',{direction:'sendrecv'});st.sa=ta.sender;st.sv=tv.sender;mtAttach()}
  pc.ontrack=e=>{const rv=$('#mtr');if(!rv)return;if(!st.rs)st.rs=new MediaStream();if(!st.rs.getTracks().includes(e.track))st.rs.addTrack(e.track);
   if(rv.srcObject!==st.rs)rv.srcObject=st.rs;rv.muted=false;rv.volume=1;mtPlay(rv)};
@@ -3142,7 +3161,7 @@ function mtAttach(){const st=MT,a=st.local.getAudioTracks()[0],v=(st.scr||st.loc
  for(const t of st.pc.getTransceivers()){const k=t.receiver&&t.receiver.track&&t.receiver.track.kind;if(!k)continue;if(st.role=='g'){try{t.direction='sendrecv'}catch(e){}if(k=='audio')st.sa=t.sender;else st.sv=t.sender}
   if(k=='audio'&&a)t.sender.replaceTrack(a);if(k=='video'&&v)t.sender.replaceTrack(v)}}
 function mtPlay(rv){const p=rv.play&&rv.play();if(p&&p.catch)p.catch(()=>{const sg=rv.parentNode;if(!sg||sg.querySelector('.mt-snd'))return;const b=document.createElement('button');b.type='button';b.className='btn mt-snd';b.innerHTML=ic('mic')+'Ativar o som';b.onclick=()=>{rv.muted=false;rv.play().catch(()=>0);b.remove()};sg.appendChild(b)})}
-function mtClosePc(){const st=MT;if(!st||!st.pc)return;st.rs=null;try{st.pc.onconnectionstatechange=null;st.pc.close()}catch(e){}st.pc=null;st.conn=false;const rv=$('#mtr');if(rv)rv.srcObject=null}
+function mtClosePc(){const st=MT;if(!st||!st.pc)return;st.rs=null;st.dc=null;st.sendId=null;try{st.pc.onconnectionstatechange=null;st.pc.close()}catch(e){}st.pc=null;st.conn=false;const rv=$('#mtr');if(rv)rv.srcObject=null}
 function mtGather(pc){return new Promise(res=>{if(pc.iceGatheringState=='complete')return res();let t0=null;const done=()=>{pc.removeEventListener('icegatheringstatechange',f);pc.removeEventListener('icecandidate',c);res()};
  const f=()=>{if(pc.iceGatheringState=='complete')done()},c=e=>{if(e.candidate&&/ typ (srflx|relay) /.test(e.candidate.candidate)&&!t0)t0=setTimeout(done,400)};
  pc.addEventListener('icegatheringstatechange',f);pc.addEventListener('icecandidate',c);setTimeout(done,2500)})}
@@ -3166,6 +3185,7 @@ function mtBtns(){const st=MT;if(!st)return;const a=st.local.getAudioTracks()[0]
  const set=(id,ico,on,l,dis)=>{const b=$(id);if(!b)return;b.classList.toggle('off',!on);b.disabled=!!dis;b.innerHTML=ic(ico)+'<small>'+l+'</small>'};
  set('#mtbm',a&&a.enabled?'mic':'micoff',a&&a.enabled,a?(a.enabled?'Microfone':'Mutado'):'Sem mic',!a);
  set('#mtbc',v&&v.enabled&&!st.scr?'camon':'camoff',v&&v.enabled&&!st.scr,v?(v.enabled?'Câmera':'Desligada'):'Sem câmera',!v);
+ const bp=$('#mtbp');if(bp){bp.classList.toggle('on',!!st.pres);bp.querySelector('small').textContent=st.pres?'Parar PDF':'Apresentar'}
  const s=$('#mtbs');if(s){s.classList.toggle('on',!!st.scr);s.querySelector('small').textContent=st.scr?'Parar tela':'Tela'}
  const lv=$('#mtl'),p=$('#mtp');if(lv&&p){p.classList.toggle('noc',!(v&&v.enabled)&&!st.scr)}}
 A.mtMic=()=>{const a=MT&&MT.local.getAudioTracks()[0];if(!a)return;a.enabled=!a.enabled;mtBtns()};
@@ -3176,6 +3196,80 @@ A.mtScr=async()=>{const st=MT;if(!st)return;if(st.scr){mtScrStop();return}
   st.scr=t;t.onended=()=>{if(MT===st&&st.scr===t)mtScrStop()};if(st.sv)await st.sv.replaceTrack(t);const lv=$('#mtl');if(lv)lv.srcObject=new MediaStream([t]);mtBtns();mtQual();mtTip('Você está compartilhando a tela.')}
  catch(e){if(e&&e.name!='NotAllowedError')mtTip('Não foi possível compartilhar a tela.')}};
 function mtScrStop(){const st=MT;if(!st||!st.scr)return;try{st.scr.stop()}catch(e){}st.scr=null;const v=st.local.getVideoTracks()[0];if(st.sv)st.sv.replaceTrack(v||null).catch(()=>0);const lv=$('#mtl');if(lv)lv.srcObject=st.local;mtBtns();mtQual()}
+/* ---------- apresentação de PDF ---------- */
+/* O PDF vai direto de um computador para o outro (canal criptografado da chamada), não passa pelo servidor.
+   O visual é desenhado em cada lado com o pdf.js, que é baixado só na primeira vez que alguém usa. */
+const PDF_MAX=40*1024*1024,PDF_CH=16*1024;let PDFJS=null;
+async function mtPdfLib(){if(PDFJS)return PDFJS;const V='6.2.108';let err;
+ for(const b of ['https://cdn.jsdelivr.net/npm/pdfjs-dist@'+V+'/build/','https://unpkg.com/pdfjs-dist@'+V+'/build/']){
+  try{const m=await import(b+'pdf.min.mjs');m.GlobalWorkerOptions.workerSrc=b+'pdf.worker.min.mjs';PDFJS=m;return m}catch(e){err=e}}
+ throw err}
+function mtDcNew(pc){const st=MT;const dc=pc.createDataChannel('pres',{negotiated:true,id:1,ordered:true});dc.binaryType='arraybuffer';st.dc=dc;
+ dc.onopen=()=>{if(MT!==st||st.dc!==dc)return;if(st.role=='g')mtDcTx({t:'hi',have:st.pres?st.pres.id:''});else if(st.pres&&st.pres.host)mtPdfSend()};
+ dc.onmessage=e=>{if(MT===st&&st.dc===dc)mtDcRx(e.data)};
+ dc.onclose=()=>{if(MT===st&&st.dc===dc)st.dc=null}}
+function mtDcTx(o){const st=MT,dc=st&&st.dc;if(!dc||dc.readyState!='open')return false;try{dc.send(JSON.stringify(o));return true}catch(e){return false}}
+async function mtPdfSend(){const st=MT,dc=st.dc,P=st.pres;if(!dc||dc.readyState!='open'||!P||!P.host||st.sendId===P.id)return;
+ st.sendId=P.id;const ok=()=>MT===st&&st.dc===dc&&dc.readyState=='open'&&st.pres===P;
+ try{dc.bufferedAmountLowThreshold=256*1024;mtDcTx({t:'pdf',id:P.id,n:P.name,sz:P.buf.byteLength});
+  for(let o=0;o<P.buf.byteLength;o+=PDF_CH){
+   if(!ok())throw 0;
+   if(dc.bufferedAmount>1024*1024)await new Promise(r=>{const f=()=>{dc.removeEventListener('bufferedamountlow',f);r()};dc.addEventListener('bufferedamountlow',f);setTimeout(f,3000)});
+   if(!ok())throw 0;dc.send(P.buf.slice(o,o+PDF_CH));
+   if((o/PDF_CH)%40==0)mtPdfMsg('Enviando para o convidado… '+Math.round(o/P.buf.byteLength*100)+'%')}
+  mtDcTx({t:'pdfe',id:P.id});mtDcTx({t:'pg',p:P.p});mtPdfMsg('')}
+ catch(e){}
+ if(st.sendId===P.id)st.sendId=null}
+function mtPdfMsg(t){const e=$('#mtrx');if(!e)return;const st=MT;if(st&&st.role=='h'){const d=$('#mtpn2');if(d)d.dataset.m=t;mtPdfPg()}else{e.hidden=!t;e.textContent=t}}
+function mtDcRx(d){const st=MT;if(!st)return;
+ if(typeof d!='string'){const r=st.rx;if(!r)return;r.parts.push(d);r.got+=d.byteLength;if(!r.tk||r.got-r.tk>262144){r.tk=r.got;mtPdfMsg('Recebendo a apresentação… '+Math.round(r.got/Math.max(1,r.sz)*100)+'%')}return}
+ let m;try{m=JSON.parse(d)}catch(e){return}
+ if(st.role=='g'){
+  if(m.t=='pdf'){st.rx={id:m.id,n:m.n,sz:m.sz,parts:[],got:0};st.want=m.id;mtShowDoc(true);mtPdfMsg('Recebendo a apresentação… 0%')}
+  else if(m.t=='pdfe'&&st.rx&&st.rx.id==m.id){const r=st.rx;st.rx=null;const buf=new Uint8Array(r.got);let o=0;for(const p of r.parts){buf.set(new Uint8Array(p),o);o+=p.byteLength}
+   mtPdfOpen(buf.buffer,r.n,m.id,false).catch(()=>{mtPdfMsg('');mtShowDoc(false);mtTip('Não foi possível abrir o PDF enviado.')})}
+  else if(m.t=='pg'){st.pgWant=m.p;if(st.pres&&st.pres.id==st.want){st.pres.p=m.p;mtPdfDraw()}}
+  else if(m.t=='pt'){mtLaser(m)}
+  else if(m.t=='pstop'){mtPdfClear(true)}}
+ else{if(m.t=='hi'&&st.pres&&st.pres.host){if(m.have==st.pres.id)mtDcTx({t:'pg',p:st.pres.p});else{st.sendId=null;mtPdfSend()}}}}
+async function mtPdfOpen(buf,name,id,host){const st=MT;const lib=await mtPdfLib();const pdf=await lib.getDocument({data:new Uint8Array(buf.slice(0))}).promise;if(MT!==st)return;
+ if(st.pres&&st.pres.pdf&&st.pres.pdf!==pdf)try{st.pres.pdf.destroy()}catch(e){}
+ st.pres={id,name,buf,pdf,pages:pdf.numPages,p:host?1:Math.min(Math.max(1,st.pgWant||1),pdf.numPages),host};
+ mtPdfMsg('');mtShowDoc(true);mtPdfDraw();mtBtns()}
+function mtShowDoc(on){const st=MT;if(!st)return;const d=$('#mtdoc'),sg=d&&d.parentNode;if(!d)return;d.hidden=!on;sg.classList.toggle('pres',on);
+ if(on&&!st.ro&&window.ResizeObserver){st.ro=new ResizeObserver(()=>mtPdfDraw());st.ro.observe($('#mtdv'))}
+ if(!on&&st.ro){st.ro.disconnect();st.ro=null}mtBtns()}
+function mtPdfPg(){const st=MT,P=st&&st.pres,e=$('#mtpn2');if(!e)return;e.textContent=(P?(P.p+' / '+P.pages):'–')+(e.dataset.m?' · '+e.dataset.m:'')}
+async function mtPdfDraw(){const st=MT,P=st&&st.pres;if(!P||!P.pdf)return;mtPdfPg();
+ if(st.drawing){st.redraw=true;return}st.drawing=true;
+ try{do{st.redraw=false;const p=P.p,pg=await P.pdf.getPage(p);if(MT!==st||st.pres!==P)break;
+   const dv=$('#mtdv'),cv=$('#mtcv'),cw=$('#mtcw');if(!dv||!cv)break;const bw=Math.max(60,dv.clientWidth-24),bh=Math.max(60,dv.clientHeight-24);
+   const v1=pg.getViewport({scale:1}),s=Math.min(bw/v1.width,bh/v1.height),dpr=Math.min(window.devicePixelRatio||1,2.5),vp=pg.getViewport({scale:s*dpr});
+   cv.width=Math.floor(vp.width);cv.height=Math.floor(vp.height);cv.style.width=Math.floor(vp.width/dpr)+'px';cv.style.height=Math.floor(vp.height/dpr)+'px';
+   const task=pg.render({canvasContext:cv.getContext('2d'),viewport:vp});await task.promise;cv.dataset.p=p;cv.dataset.ok=(cv.dataset.ok|0)+1}
+  while(st.redraw&&MT===st)}
+ catch(e){if(!(e&&e.name=='RenderingCancelledException'))console.warn('pdf',e)}
+ st.drawing=false}
+function mtPdfClear(remote){const st=MT;if(!st)return;const P=st.pres;st.pres=null;st.rx=null;st.sendId=null;st.want=null;st.pgWant=0;if(P&&P.pdf)try{P.pdf.destroy()}catch(e){}
+ st.laser=false;const l=$('#mtls');if(l)l.hidden=true;mtShowDoc(false);mtPdfMsg('');if(remote)mtTip('O anfitrião encerrou a apresentação.')}
+function mtLaser(m){const l=$('#mtls');if(!l)return;if(!m.on){l.hidden=true;return}l.style.left=(m.x*100)+'%';l.style.top=(m.y*100)+'%';l.hidden=false}
+A.mtPdf=async()=>{const st=MT;if(!st||st.role!='h')return;
+ if(st.pres){mtDcTx({t:'pstop'});mtPdfClear(false);mtTip('Apresentação encerrada.');return}
+ const f=$('#mtpf');if(f){f.value='';f.click()}};
+async function mtPdfPick(f){const st=MT;if(!st||!f)return;
+ if(!/pdf$/i.test(f.name)&&f.type!='application/pdf'){mtTip('Escolha um arquivo PDF.');return}
+ if(f.size>PDF_MAX){mtTip('O PDF é grande demais (máximo 40 MB).');return}
+ mtTip('Abrindo o PDF…');
+ try{const buf=await f.arrayBuffer();if(new TextDecoder().decode(buf.slice(0,1024)).indexOf('%PDF')<0){mtTip('Esse arquivo não parece ser um PDF.');return}
+  await mtPdfOpen(buf,f.name,mtRand(8,M_ID),true);if(MT!==st)return;mtTip('Apresentando: '+f.name.slice(0,40));mtPdfSend()}
+ catch(e){console.warn(e);mtTip(e&&e.name=='PasswordException'?'Esse PDF tem senha. Remova a senha e tente de novo.':'Não foi possível abrir o PDF. Confira a internet e tente de novo.')}}
+A.mtPg=d=>{const st=MT,P=st&&st.pres;if(!P||!P.host)return;const n=Math.min(P.pages,Math.max(1,(d.to?+d.to:P.p+(+d.d||0))));if(n==P.p)return;P.p=n;mtDcTx({t:'pg',p:n});mtPdfDraw()};
+A.mtLaser=()=>{const st=MT;if(!st||!st.pres)return;st.laser=!st.laser;const b=$('#mtbl');if(b)b.classList.toggle('on',st.laser);if(!st.laser)mtDcTx({t:'pt',on:0});const w=$('#mtcw');if(w)w.classList.toggle('lz',st.laser)};
+document.addEventListener('keydown',e=>{const st=MT;if(!st||!st.pres||!st.pres.host||/INPUT|TEXTAREA|SELECT/.test((e.target||{}).tagName||''))return;
+ const k=e.key;if(k=='ArrowRight'||k=='PageDown'||k==' '||k=='ArrowDown'){e.preventDefault();A.mtPg({d:1})}else if(k=='ArrowLeft'||k=='PageUp'||k=='ArrowUp'){e.preventDefault();A.mtPg({d:-1})}else if(k=='Home')A.mtPg({to:1});else if(k=='End')A.mtPg({to:st.pres.pages})});
+document.addEventListener('pointermove',e=>{const st=MT;if(!st||!st.laser||!st.pres||!st.pres.host)return;const cv=$('#mtcv');if(!cv)return;const r=cv.getBoundingClientRect();
+ const x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height,now=Date.now();if(now-(st.ptT||0)<50)return;st.ptT=now;
+ const on=x>=0&&x<=1&&y>=0&&y<=1;if(!on&&!st.ptOn)return;st.ptOn=on;mtDcTx({t:'pt',on:on?1:0,x:+x.toFixed(4),y:+y.toFixed(4)});mtLaser({on:on?1:0,x,y})});
 A.mtQm=()=>{const p=$('#mtqp');if(p)p.hidden=!p.hidden};
 A.mtQ=d=>{const st=MT;if(!st)return;st.q=d.q;const p=$('#mtqp');if(p){p.hidden=true;$$('#mtqp button[data-q]').forEach(b=>b.classList.toggle('on',b.dataset.q==d.q))}const l=$('#mtql');if(l)l.textContent=MTQ[d.q].l;mtQual();mtTip('Qualidade: '+MTQ[d.q].l+' · '+MTQ[d.q].s)};
 A.mtFs=()=>{const r=MT&&MT.root;if(!r)return;if(document.fullscreenElement)document.exitFullscreen();else if(r.requestFullscreen)r.requestFullscreen().catch(()=>0)};
@@ -3187,7 +3281,7 @@ function mtTick(){const st=MT;if(mtGone())return;
  if(st.t0){const s=Math.floor((Date.now()-st.t0)/1000),e=$('#mttm');if(e)e.textContent=pad(Math.floor(s/60))+':'+pad(s%60)}
  const rv=$('#mtr'),q=$('#mtq');if(rv&&q&&rv.videoWidth){const w=rv.videoWidth,h=rv.videoHeight;q.textContent=(h>=1000?'Full HD':h>=700?'HD':'SD')+' · '+w+'×'+h}else if(q)q.textContent=''}
 function mtEnd(msg,final){const st=MT;if(!st)return;st.alive=false;MT=null;st.iv.forEach(clearInterval);clearTimeout(st.dcT);
- try{st.pc&&st.pc.close()}catch(e){}try{st.scr&&st.scr.stop()}catch(e){}try{st.local.getTracks().forEach(t=>t.stop())}catch(e){}
+ try{st.pc&&st.pc.close()}catch(e){}try{st.ro&&st.ro.disconnect()}catch(e){}try{st.pres&&st.pres.pdf&&st.pres.pdf.destroy()}catch(e){}try{st.scr&&st.scr.stop()}catch(e){}try{st.local.getTracks().forEach(t=>t.stop())}catch(e){}
  const url=FB.db+'/meet/'+st.id+'/'+st.role+'.json'+((typeof S!='undefined'&&S&&S.tok&&ME)?'?auth='+S.tok:'');if(st.joined&&(!final||!/encerrada/.test(msg)))try{fetch(url,{method:'DELETE',keepalive:true}).catch(()=>0)}catch(e){}
  if(document.fullscreenElement)try{document.exitFullscreen()}catch(e){}
  const r=st.root;document.body.classList.remove('mtopen');
