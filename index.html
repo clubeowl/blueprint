@@ -540,9 +540,15 @@ a.btn{text-decoration:none}
 #nav a{padding:7px 14px}
 .ng{padding:11px 12px 4px}
 .lo{padding:5px 10px}
+/* sem animações de entrada quando a tela só está sendo atualizada */
+#view.na *,#view.na *::before,#view.na *::after{animation:none!important}
+/* resumo pequeno dentro de cartões (ex.: Home > Validação) */
+.pn .k{padding:12px 6px;box-shadow:none;background:#f4f8ff;border:0;border-radius:16px;min-width:0;overflow:hidden}
+.pn .k b{font-size:1.5rem}
+.pn .k small{letter-spacing:.05em;font-size:.62rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style></head><body><div id="app"></div><div id="prt"></div>
 <script>
-const BUILD="07/11/2026 01:31";
+const BUILD="07/11/2026 02:02";
 'use strict';
 /* ===================== Blueprint · núcleo ===================== */
 const FB={apiKey:'AIzaSyAKt9bzn2tyCfIkllZ6l4I_VB_M4ky5fIU',db:'https://owl-crm-2026-default-rtdb.firebaseio.com'};
@@ -666,19 +672,23 @@ async function tok(){if(!S.tok||Date.now()>S.exp-90000)await refreshTok();return
 async function api(method,path,body,q){const t=await tok();const r=await fetch(`${FB.db}/${path}.json?auth=${t}${q?'&'+q:''}`,{method,body:body===undefined?undefined:JSON.stringify(body)});if(!r.ok){const e=new Error('HTTP '+r.status);e.status=r.status;throw e}return r.json()}
 const pubApi=async(method,path,body,q)=>{const r=await fetch(`${FB.db}/${path}.json${q?'?'+q:''}`,{method,body:body===undefined?undefined:JSON.stringify(body)});if(!r.ok){const e=new Error('HTTP '+r.status);e.status=r.status;throw e}return r.json()};
 function setLocal(path,val){const p=path.split('/'),root=D;let o=root;for(let i=0;i<p.length-1;i++){if(o[p[i]]==null||typeof o[p[i]]!='object')o[p[i]]={};o=o[p[i]]}const k=p[p.length-1];if(val===null||val===undefined)delete o[k];else o[k]=val}
+let wseq=0,tickT=0,recT=0;
+function uiTick(){cancelAnimationFrame(tickT);tickT=requestAnimationFrame(()=>{if(typeof onData=='function')onData()})}
 const W={
- async run(fn){pending++;syncState='sv';syncUI();try{await fn();syncState='ok'}catch(e){syncState='er';console.error(e);toast(e.status==401||e.status==403?'Sem permissão para salvar isso.':'Não foi possível salvar. Verifique a conexão.',1);pull(true)}finally{pending--;syncUI()}},
- set(path,val){setLocal(path,val);return this.run(()=>api('PUT',path,val))},
- del(path){setLocal(path,null);return this.run(()=>api('DELETE',path))},
- patch(path,obj){for(const k in obj)setLocal(path+'/'+k,obj[k]);const o={};for(const k in obj)o[k]=obj[k]===undefined?null:obj[k];return this.run(()=>api('PATCH',path,o))}
+ async run(fn){pending++;syncState='sv';syncUI();try{await fn();syncState='ok'}catch(e){syncState='er';console.error(e);toast(e.status==401||e.status==403?'Sem permissão para salvar isso.':'Não foi possível salvar. Verifique a conexão.',1);pending--;try{await pull(true)}finally{pending++}}finally{pending--;syncUI();if(!pending){clearTimeout(recT);recT=setTimeout(()=>pull(),900)}}},
+ set(path,val){wseq++;setLocal(path,val);uiTick();return this.run(()=>api('PUT',path,val))},
+ del(path){wseq++;setLocal(path,null);uiTick();return this.run(()=>api('DELETE',path))},
+ patch(path,obj){wseq++;for(const k in obj)setLocal(path+'/'+k,obj[k]);uiTick();const o={};for(const k in obj)o[k]=obj[k]===undefined?null:obj[k];return this.run(()=>api('PATCH',path,o))}
 };
 async function pull(force){
  if(!ME||(pending&&!force))return;
+ const s0=wseq;
  try{
   const reqs=[['users','users'],['clients','clients'],['contents','contents'],['crm','crm'],['tgoals','tgoals'],['config','config'],['approvals','approvals'],['meta','meta']];
   const res=await Promise.all(reqs.map(r=>api('GET',r[1]).catch(e=>{if(e.status==401||e.status==403)return D[r[0]];throw e})));
-  reqs.forEach((r,i)=>{D[r[0]]=res[i]||{}});
-  D.comm=isAdm()?(await api('GET','comm').catch(()=>({}))||{}):{[ME.uid]:(await api('GET','comm/'+ME.uid).catch(()=>({})))||{}};
+  const comm=isAdm()?(await api('GET','comm').catch(()=>({}))||{}):{[ME.uid]:(await api('GET','comm/'+ME.uid).catch(()=>({})))||{}};
+  if(wseq!==s0||(pending&&!force)){syncUI();return}   /* uma gravação aconteceu durante a leitura: descarta o resultado velho */
+  reqs.forEach((r,i)=>{D[r[0]]=res[i]||{}});D.comm=comm;
   const me=D.users[ME.uid];if(me)ME={...ME,...me,uid:ME.uid};
   if(me&&me.active===false){toast('Seu acesso foi desativado.',1);return doLogout()}
   syncState='ok';
@@ -687,7 +697,7 @@ async function pull(force){
  const sig=JSON.stringify([D.users,D.clients,D.contents,D.crm,D.tgoals,D.config,D.approvals,D.comm,D.meta]);
  if(sig!==lastSig){lastSig=sig;onData()}
 }
-function syncUI(){const e=$('#sy');if(!e)return;e.className='sy '+(syncState=='sv'?'':syncState);e.innerHTML='<i></i><span class="tx">'+(syncState=='sv'?'Salvando…':syncState=='er'?'Sem conexão':'Sincronizado')+'</span>'}
+let syncLast='';function syncUI(){const e=$('#sy');if(!e)return;const k=syncState;if(k===syncLast&&e.firstChild)return;syncLast=k;e.className='sy '+(syncState=='sv'?'':syncState);e.innerHTML='<i></i><span class="tx">'+(syncState=='sv'?'Salvando…':syncState=='er'?'Sem conexão':'Sincronizado')+'</span>'}
 
 /* ---------- ui: toast, modal, confirm, tooltip ---------- */
 let tt;function toast(m,er){let e=$('#ts');if(!e){e=document.createElement('div');e.id='ts';e.setAttribute('role','status');document.body.appendChild(e)}e.className='ts '+(er?'er':'');e.textContent=m;requestAnimationFrame(()=>e.classList.add('on'));clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('on'),3400)}
@@ -771,7 +781,37 @@ function route(){
  document.title=PAGES[p].t+' · Blueprint';draw(true);
 }
 function keepScroll(){const m=new Map();$$('#view,#view .cl2,#view .kb,#view .msgs,#view .chl').forEach((e,i)=>m.set(i,[e.scrollTop,e.scrollLeft]));return ()=>$$('#view,#view .cl2,#view .kb,#view .msgs,#view .chl').forEach((e,i)=>{const s=m.get(i);if(s){e.scrollTop=s[0];e.scrollLeft=s[1]}})}
-function draw(fresh){const pg=PAGES[cur],v=$('#view');if(!v||!pg)return;const rs=fresh?null:keepScroll();v.className=fresh?'':'na';v.innerHTML=pg.r();if(pg.after)pg.after(fresh);if(rs)rs();if(fresh){window.scrollTo(0,0)}first=false;badges()}
+/* atualização suave: compara o HTML novo com o que está na tela e mexe só no que mudou (sem piscar) */
+const mKey=n=>n.nodeType==1?(n.getAttribute('data-id')||n.id||null):null;
+function mPatch(d,s){
+ if(d.nodeType!=1){if(d.nodeValue!==s.nodeValue)d.nodeValue=s.nodeValue;return}
+ for(const a of Array.from(d.attributes))if(!s.hasAttribute(a.name))d.removeAttribute(a.name);
+ for(const a of Array.from(s.attributes))if(d.getAttribute(a.name)!==a.value)d.setAttribute(a.name,a.value);
+ const tg=d.nodeName;
+ if(tg=='INPUT'){if(d.type=='checkbox'||d.type=='radio')d.checked=s.hasAttribute('checked');else if(d!==document.activeElement&&d.type!='file'&&d.value!==(s.getAttribute('value')||''))d.value=s.getAttribute('value')||'';return}
+ if(tg=='TEXTAREA'){if(d!==document.activeElement&&d.value!==s.value)d.value=s.value;return}
+ if(tg=='SELECT'){mMorph(d,s);if(d!==document.activeElement){const o=Array.from(s.options).find(x=>x.hasAttribute('selected'));d.value=o?o.value:(d.options[0]?d.options[0].value:'')}return}
+ mMorph(d,s)}
+function mMorph(dst,src){
+ const sc=Array.from(src.childNodes),dm=new Map();
+ Array.from(dst.childNodes).forEach(n=>{const k=mKey(n);if(k&&!dm.has(k))dm.set(k,n)});
+ let i=0;
+ for(const s of sc){
+  const k=mKey(s);let d=dst.childNodes[i];
+  if(k&&dm.has(k)){const m=dm.get(k);if(m!==d)dst.insertBefore(m,d||null);d=m}
+  else if(d&&mKey(d)&&!k){dst.insertBefore(s.cloneNode(true),d);i++;continue}
+  if(!d){dst.appendChild(s.cloneNode(true));i++;continue}
+  if(d.nodeType!==s.nodeType||d.nodeName!==s.nodeName||mKey(d)!==k){dst.insertBefore(s.cloneNode(true),d);i++;continue}
+  mPatch(d,s);i++}
+ while(dst.childNodes.length>i)dst.removeChild(dst.lastChild)}
+function draw(fresh){const pg=PAGES[cur],v=$('#view');if(!v||!pg)return;
+ const html=pg.r();
+ if(fresh||!v.firstChild){v.className=fresh?'':'na';v.innerHTML=html;v.__h=html;if(pg.after)pg.after(fresh);if(fresh)window.scrollTo(0,0);first=false;badges();return}
+ if(v.__h===html){badges();return}
+ v.__h=html;v.className='na';
+ const t=document.createElement('template');t.innerHTML=html;
+ try{mMorph(v,t.content)}catch(e){console.error(e);v.innerHTML=html}
+ if(pg.after)pg.after(false);first=false;badges()}
 let dragging=false;
 function onData(){if(!ME||dragging)return;const ae=document.activeElement;if($('.md')||(ae&&/INPUT|TEXTAREA|SELECT/.test(ae.tagName)&&$('#view').contains(ae)&&!ae.dataset.nokeep))return;const pg=PAGES[cur];if(pg&&!pg.manual)draw(false);else badges()}
 function badges(){}
