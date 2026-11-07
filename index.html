@@ -546,9 +546,105 @@ a.btn{text-decoration:none}
 .pn .k{padding:12px 6px;box-shadow:none;background:#f4f8ff;border:0;border-radius:16px;min-width:0;overflow:hidden}
 .pn .k b{font-size:1.5rem}
 .pn .k small{letter-spacing:.05em;font-size:.62rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+
+/* ===================== TEMA 3 · barra superior, menu recolhível, Criativos, Carteiro ===================== */
+/* menu lateral: ícones por padrão, abre ao passar o mouse; cadeado fixa aberto */
+body .sb{width:80px;padding:18px 12px 14px;z-index:50;overflow:hidden;display:flex;flex-direction:column;transition:width .26s var(--e),box-shadow .26s,border-radius .26s}
+body.sbl .sb,body .sb:hover,body .sb:has(:focus-visible){width:272px}
+body:not(.sbl) .sb:hover,body:not(.sbl) .sb:has(:focus-visible){border-radius:30px;box-shadow:0 30px 70px -14px rgba(5,25,80,.6)}
+body .mn{margin:20px 20px 20px 100px;transition:margin-left .26s var(--e)}
+body.sbl .mn{margin-left:292px}
+.brw{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.brw .br{flex:1;min-width:0;margin:0}
+.pin{flex:none;width:34px;height:34px;border-radius:11px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);display:grid;place-items:center;transition:background .18s,color .18s}
+.pin svg{width:16px;height:16px}.pin:hover{background:rgba(255,255,255,.18);color:#fff}
+.pin.on{background:var(--y);border-color:var(--y);color:#10244a}
+#nav{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;margin:0 -6px;padding:0 6px}#nav::-webkit-scrollbar{display:none}
+#nav a{position:relative;padding:10px 14px 10px 18px}
+.sb:not(.lk):not(:hover):not(:has(:focus-visible)) .tx{opacity:0;pointer-events:none}
+.sb:not(.lk):not(:hover):not(:has(:focus-visible)) .pin,.sb:not(.lk):not(:hover):not(:has(:focus-visible)) .bn{display:none}
+.sb:not(.lk):not(:hover):not(:has(:focus-visible)) .br{padding:7px;justify-content:center}
+.sb:not(.lk):not(:hover):not(:has(:focus-visible)) .ng{font-size:0;padding:0;height:1px;margin:11px 14px;background:rgba(255,255,255,.14);overflow:hidden}
+.sb:not(.lk):not(:hover):not(:has(:focus-visible)) #nav a .bd{position:absolute;right:10px;top:7px;min-width:10px;width:10px;height:10px;padding:0;font-size:0;border-radius:50%;background:var(--y)}
+/* barra superior */
+.tb{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;padding:14px 44px 8px;background:linear-gradient(#f5f8fe 72%,rgba(245,248,254,0));border-radius:0 30px 0 0}
+.tsr{flex:1;max-width:460px;height:40px;display:flex;align-items:center;gap:10px;padding:0 8px 0 14px;border:1px solid var(--ln);border-radius:999px;background:#fff;color:var(--mu);text-align:left;font-size:.86rem;font-weight:500;box-shadow:0 4px 14px -10px rgba(16,36,74,.35);transition:border-color .18s,box-shadow .18s}
+.tsr:hover{border-color:#b9cff6;box-shadow:0 8px 20px -12px rgba(31,102,240,.5)}
+.tsr svg{width:17px;height:17px;flex:none}.tsr span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tsr kbd{font:700 .68rem var(--body);background:var(--bg);color:var(--n2);border-radius:8px;padding:3px 8px}
+.tr{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tb .sy{display:flex;align-items:center;gap:6px;padding:0;color:var(--mu);font-size:.74rem;font-weight:600}
+.tb .sy i{width:8px;height:8px;border-radius:50%;background:#eda100;display:inline-block}.tb .sy.ok i{background:#1baf7a}.tb .sy.er i{background:var(--rd)}
+.tb .sy .tx{opacity:1}
+.tu{display:flex;align-items:center;gap:8px;padding:3px 14px 3px 3px;border:1px solid var(--ln);border-radius:999px;background:#fff;text-decoration:none;color:var(--tx);transition:border-color .18s}
+.tu:hover{border-color:#b9cff6}.tu .av{width:30px;height:30px;font-size:.7rem}
+.tu span:last-child{display:grid;line-height:1.15}.tu b{font-size:.8rem}.tu small{font-size:.66rem;color:var(--mu)}
+.tlo{position:relative;width:36px;height:36px;border-radius:50%;border:1px solid var(--ln);background:#fff;color:var(--mu);display:grid;place-items:center;transition:color .18s,border-color .18s,background .18s}
+.tlo svg{width:17px;height:17px}.tlo:hover{color:var(--rd);border-color:rgba(192,50,42,.35);background:#fff5f4}
+[data-tt]:hover::after,[data-tt]:focus-visible::after{content:attr(data-tt);position:absolute;top:50%;right:calc(100% + 8px);transform:translateY(-50%);z-index:60;background:#0f2a5c;color:#fff;font-size:.72rem;font-weight:600;padding:5px 10px;border-radius:8px;white-space:nowrap;pointer-events:none;box-shadow:0 10px 22px -8px rgba(5,25,80,.6)}
+.ph{padding-top:22px}
+/* Criativos: abas */
+.crt{display:flex;gap:10px;align-items:stretch;margin:0 0 16px;flex-wrap:wrap}
+.crb{position:relative;display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--ln);border-radius:18px;padding:10px 16px 10px 10px;text-align:left;transition:border-color .18s,box-shadow .18s,background .18s}
+.crb:hover{border-color:#b9cff6}
+.crb .cri{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:#eaf1fd;color:var(--ac)}
+.crb.b-design .cri{background:#fdeee6;color:#eb6834}.crb.b-av .cri{background:#ece9fb;color:#6250d6}
+.crb .cri svg{width:20px;height:20px}
+.crb .crx{display:grid;line-height:1.2}.crb .crx b{font-weight:800;font-size:.95rem}.crb .crx small{color:var(--mu);font-size:.74rem}
+.crb em{font-style:normal;font-weight:800;background:var(--bg);border-radius:999px;padding:2px 10px;font-size:.78rem;margin-left:6px}
+.crb.on{border-color:var(--ac);background:linear-gradient(180deg,#fff,#f3f7ff);box-shadow:0 12px 26px -16px rgba(31,102,240,.6)}
+.crb.on.b-design{border-color:#eb6834;background:linear-gradient(180deg,#fff,#fff6f1);box-shadow:0 12px 26px -16px rgba(235,104,52,.6)}
+.crb.on.b-av{border-color:#6250d6;background:linear-gradient(180deg,#fff,#f6f4ff);box-shadow:0 12px 26px -16px rgba(98,80,214,.6)}
+.crb .crl{position:absolute;top:-7px;right:-4px;background:var(--rd);color:#fff;font-style:normal;font-weight:800;font-size:.68rem;border-radius:999px;min-width:20px;height:20px;display:grid;place-items:center;padding:0 5px}
+.crn{align-self:center;margin-left:auto;color:var(--mu);font-size:.78rem;display:flex;align-items:center;gap:6px}.crn svg{width:15px;height:15px}
+.kt{display:inline-flex;align-items:center;gap:4px;font-weight:700;border-radius:999px;padding:1px 8px}.kt svg{width:12px;height:12px}
+.kt.v{background:#ece9fb;color:#5140c4}.kt.p{background:#fdeee6;color:#c24d1c}
+/* Carteiro */
+.ctb{display:flex;align-items:center;gap:16px;background:linear-gradient(100deg,#fff8dc,#fffbe9);border:1px solid #f1e3a0;border-radius:20px;padding:14px 18px;margin-bottom:16px}
+.ctbi{width:42px;height:42px;border-radius:14px;background:var(--y);display:grid;place-items:center;color:#10244a;flex:none}.ctbi svg{width:20px;height:20px}
+.ctb>div:nth-child(2){flex:1}.ctb b{display:block}.ctb p{margin:2px 0 0;color:#6b5b12;font-size:.86rem}.ctb small{color:#6b5b12}
+.ctw{display:grid;grid-template-columns:320px minmax(0,1fr);gap:16px;align-items:start}
+.ctl{position:sticky;top:72px;max-height:calc(100vh - 96px);overflow:auto;padding:18px}
+.ctr{min-width:0}.ctr .pn{margin-bottom:14px}
+.cte{display:flex;align-items:center;gap:12px;width:100%;padding:9px 10px;border-radius:16px;border:1px solid transparent;background:none;text-align:left;cursor:pointer;transition:background .15s}
+.cte:hover{background:#f1f6ff}.cte.on{background:#eaf1fd;border-color:#cfe0fd}
+.cta{--c:#1f66f0;width:38px;height:38px;border-radius:13px;background:#eaf1fd;background:color-mix(in srgb,var(--c) 16%,#fff);color:var(--c);display:grid;place-items:center;font-weight:800;font-size:.8rem;flex:none}
+.cta.all{background:#10244a;color:var(--y)}.cta.all svg{width:18px;height:18px}
+.ctn{display:grid;min-width:0;flex:1}.ctn b{font-size:.88rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ctn small{color:var(--mu);font-size:.74rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ctn small i{font-style:normal;opacity:.7}
+.ctp{display:inline-flex;align-items:center;gap:6px;font-size:.68rem;font-weight:700;border-radius:999px;padding:3px 9px;white-space:nowrap;background:#eef2fa;color:#5b6f94}
+.ctp i{width:6px;height:6px;border-radius:50%;background:currentColor}
+.ctp.on{background:#e0f5ec;color:#0f7a50}.ctp.wn{background:#fff1d6;color:#8a5a00}.ctp.of{background:#fde7e5;color:#b3261e}
+.cth{display:flex;align-items:center;gap:14px;padding:16px 20px}.cth h3{margin:0}
+.ctrd{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.ctc{border:1px solid var(--ln);border-left:4px solid var(--c);border-radius:16px;padding:12px 14px;display:grid;gap:8px;background:#fff;align-content:start}
+.ctc b{display:block}.ctc small{color:var(--mu)}.ctc p{margin:0;color:var(--mu);font-size:.8rem;line-height:1.4}
+.ctm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.76rem;color:var(--mu)}.ctm svg{width:12px;height:12px;vertical-align:-1px}
+.ctd{margin-top:14px}
+.ctdh{display:flex;align-items:center;gap:8px;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);font-weight:800;margin-bottom:8px}.ctdh span{background:var(--bg);border-radius:999px;padding:1px 8px}
+.ctrw{display:flex;align-items:center;gap:12px;border:1px solid var(--ln);border-radius:16px;padding:10px 14px 10px 10px;margin-bottom:8px;background:#fff;transition:box-shadow .18s,border-color .18s}
+.ctrw:hover{border-color:#cfe0fd;box-shadow:0 10px 24px -16px rgba(31,102,240,.55)}
+.ctt{width:54px;text-align:center;font:800 1.05rem var(--display);color:var(--n)}
+.ctbar{width:4px;align-self:stretch;border-radius:4px;flex:none}
+.ctx{flex:1;min-width:0}.ctl1{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.ctx small{color:var(--mu)}
+.cter{margin-top:6px;font-size:.78rem;color:var(--rd);background:#fdeceb;border-radius:8px;padding:4px 8px}.cter.wn{color:#8a5a00;background:#fff3d9}
+.ctlk{display:block;margin-top:4px;font-size:.78rem;color:var(--ac);font-weight:700;text-decoration:none}
+.cta2{display:flex;gap:6px;align-items:center}
+.ctrw.publicado{opacity:.88}.ctrw.cancelado{opacity:.55}
+.ctdone{margin:24px 0 -2px;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mu)}
+.ctopt{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--ln);border-radius:14px;padding:12px;margin-top:8px;cursor:pointer}
+.ctopt.dis{opacity:.55;cursor:not-allowed}.ctopt input{margin-top:3px;width:auto}.ctopt span{display:grid}.ctopt small{color:var(--mu);font-weight:500}
+.ctst{display:flex;gap:12px;align-items:center;border-radius:16px;padding:12px 14px;margin-bottom:12px;background:#eef2fa}
+.ctst i{width:10px;height:10px;border-radius:50%;background:#8a96a6;flex:none}.ctst div{display:grid}.ctst small{color:var(--mu)}
+.ctst.on{background:#e6f6ee}.ctst.on i{background:#1baf7a}.ctst.wn{background:#fff4dc}.ctst.wn i{background:#eda100}.ctst.of{background:#fdeceb}.ctst.of i{background:var(--rd)}
+.ctnote{background:#f4f8ff;border:1px solid #dbe7fb;border-radius:14px;padding:12px 16px;margin:12px 0;font-size:.84rem}.ctnote ul,.ctnote ol{margin:6px 0 4px;padding-left:20px}.ctnote li{margin:3px 0}
+@media (max-width:1300px){.ctw{grid-template-columns:270px minmax(0,1fr)}}
+label.ctopt{display:flex!important;flex-direction:row!important;align-items:flex-start;gap:12px}
+.ctopt input[type=radio]{width:18px!important;height:18px!important;min-width:18px;flex:none;margin:2px 0 0!important;padding:0!important;box-shadow:none!important;accent-color:var(--ac)}
+.ctopt>span{display:grid;gap:2px;font-weight:700}
 </style></head><body><div id="app"></div><div id="prt"></div>
 <script>
-const BUILD="07/11/2026 02:02";
+const BUILD="07/11/2026 02:39";
 'use strict';
 /* ===================== Blueprint · núcleo ===================== */
 const FB={apiKey:'AIzaSyAKt9bzn2tyCfIkllZ6l4I_VB_M4ky5fIU',db:'https://owl-crm-2026-default-rtdb.firebaseio.com'};
@@ -577,7 +673,7 @@ gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9
 search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
 plus:'<path d="M12 5v14M5 12h14"/>',
 x:'<path d="M6 6l12 12M18 6L6 18"/>',
-logout:'<path d="M9 4H5v16h4M16 8l4 4-4 4M20 12H9"/>',
+logout:'<path d="M9 4H5v16h4M16 8l4 4-4 4M20 12H9"/>',power:'<path d="M12 3v8"/><path d="M7.2 6.3a8 8 0 1 0 9.6 0"/>',lock:'<rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',unlock:'<rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 7.5-2"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3.5 7.5 8.5 6 8.5-6"/>',ig:'<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/>',video:'<rect x="3" y="6" width="13" height="12" rx="3"/><path d="m16 10.5 5-3v9l-5-3"/>',photo:'<rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-8 9"/>',
 link:'<path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/>',
 shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/>',
 dl:'<path d="M12 4v11M7 11l5 5 5-5M4 20h16"/>',
@@ -646,16 +742,24 @@ const dbg=(...a)=>{if(window.__BPDEBUG)console.log(...a)};
 /* ---------- estado ---------- */
 let S={tok:null,rt:null,exp:0,uid:null,email:null};
 let ME=null;
-const D={users:{},clients:{},contents:{},crm:{},comm:{},tgoals:{},config:{},approvals:{},meta:{}};
+const D={users:{},clients:{},contents:{},crm:{},comm:{},tgoals:{},config:{},approvals:{},meta:{},carteiro:{}};
 let pending=0,syncState='ok',lastSig='',busy=false;
 const isAdm=()=>ME&&ME.role=='admin';
-/* setores: geral (todas as áreas) · comercial (CRM e clientes) · criativo (conteúdos, design, audiovisual, validação, calendário). Fora do seu setor o membro só visualiza. */
-const SETORES={geral:'Geral',comercial:'Comercial',criativo:'Criativo'};
+/* funções (setores): geral (todas as áreas) · comercial (CRM e clientes) · criativo (todas as áreas criativas) · social media (conteúdos/ideias/briefings) · designer (arte e foto) · videomaker (vídeo). Fora da sua função o membro só visualiza ou nem vê. */
+const SETORES={geral:'Geral',comercial:'Comercial',criativo:'Criativo',social:'Social media',designer:'Designer',video:'Videomaker'};
+const SETOR_DESC={geral:'todas as áreas',comercial:'CRM e clientes',criativo:'todas as áreas criativas',social:'cria conteúdos, ideias e briefings',designer:'só vê e produz arte e foto',video:'só vê e produz vídeo'};
+const CRE=['criativo','social','designer','video'];
+const BOARD_OF={social:['conteudo'],designer:['design'],video:['av']};
 const AREAS={crm:'comercial',cli:'comercial',cont:'criativo'};
 const mySetor=()=>isAdm()?'admin':((ME&&ME.setor)||'geral');
-const canAct=a=>isAdm()||mySetor()=='geral'||mySetor()==AREAS[a];
-const canEd=a=>isAdm()||(!!a&&canAct(a)&&!!(D.config.perms&&D.config.perms.memberEdit===true));
-const noSec=a=>{toast('Esse item é do setor '+SETORES[AREAS[a]]+'. Você pode visualizar, mas não alterar.',1)};
+const isLim=()=>{const s=mySetor();return s=='designer'||s=='video'};
+const canAct=a=>{if(isAdm())return true;const s=mySetor();if(s=='geral')return true;if(a=='cont')return CRE.includes(s);return s==AREAS[a]};
+const myBoards=()=>BOARD_OF[mySetor()]||['conteudo','design','av'];
+const canBoard=b=>{if(isAdm())return true;const s=mySetor();if(s=='geral'||s=='criativo')return true;return (BOARD_OF[s]||[]).includes(b)};
+const canEd=a=>isAdm()||(!!a&&canAct(a)&&!!((D.config.perms&&D.config.perms.memberEdit===true)||(a=='cont'&&mySetor()=='social')));
+const canPost=()=>isAdm()||['geral','criativo','social'].includes(mySetor());
+const noSec=a=>{toast('Esse item é da função '+SETORES[AREAS[a]]+'. Você pode visualizar, mas não alterar.',1)};
+const noBoard=()=>toast('Esse quadro é de outra função. Você pode visualizar, mas não alterar.',1);
 const userList=()=>L(D.users).filter(u=>u.active!==false);
 const uname=u=>(D.users[u]&&D.users[u].name)||'—';
 const uav=(u,c)=>{const o=typeof u=='string'?{...(D.users[u]||{}),id:u}:u;return `<span class="av ${c||''}" title="${esc(o&&o.name||'')}">${o&&o.photo?`<img src="${esc(o.photo)}" alt="">`:esc(ini(o&&o.name))}</span>`};
@@ -684,7 +788,7 @@ async function pull(force){
  if(!ME||(pending&&!force))return;
  const s0=wseq;
  try{
-  const reqs=[['users','users'],['clients','clients'],['contents','contents'],['crm','crm'],['tgoals','tgoals'],['config','config'],['approvals','approvals'],['meta','meta']];
+  const reqs=[['users','users'],['clients','clients'],['contents','contents'],['crm','crm'],['tgoals','tgoals'],['config','config'],['approvals','approvals'],['meta','meta'],['carteiro','carteiro']];
   const res=await Promise.all(reqs.map(r=>api('GET',r[1]).catch(e=>{if(e.status==401||e.status==403)return D[r[0]];throw e})));
   const comm=isAdm()?(await api('GET','comm').catch(()=>({}))||{}):{[ME.uid]:(await api('GET','comm/'+ME.uid).catch(()=>({})))||{}};
   if(wseq!==s0||(pending&&!force)){syncUI();return}   /* uma gravação aconteceu durante a leitura: descarta o resultado velho */
@@ -751,8 +855,8 @@ function hbars(items,o={}){const mx=Math.max(1,...items.map(i=>i.v));return `<di
 /* ---------- estágios / boards ---------- */
 const BOARDS={
  conteudo:{n:'Conteúdos',ins:1,st:[['ideia','Ideia','#8a96a6'],['legenda','Legenda e roteiro','#2a78d6'],['avaliacao','Avaliação','#eda100'],['aprovado','Aprovado internamente','#1baf7a'],['cliente','Com o cliente','#6250d6'],['reprovado','Cliente reprovou','#d03b3b'],['aprcli','Aprovado pelo cliente','#0ca30c'],['agendado','Agendado / publicado','#1f66f0']]},
- design:{n:'Design',ins:1,st:[['fila','Fila / briefing','#8a96a6'],['criando','Em criação','#2a78d6'],['revisao','Revisão interna','#eda100'],['ajustes','Ajustes','#d03b3b',{adj:1}],['entrega','Entregar para avaliação','#0ca30c',{ret:1}]]},
- av:{n:'Audiovisual',ins:1,st:[['roteiro','Roteiro','#8a96a6'],['capt','Captação agendada','#6250d6'],['captada','Captado','#2a78d6'],['edicao','Em edição','#e87ba4'],['revisao','Revisão interna','#eda100'],['ajustes','Ajustes','#d03b3b',{adj:1}],['entrega','Entregar para avaliação','#0ca30c',{ret:1}]]},
+ design:{n:'Arte e foto',ins:1,st:[['fila','Fila / briefing','#8a96a6'],['criando','Em criação','#2a78d6'],['revisao','Revisão interna','#eda100'],['ajustes','Ajustes','#d03b3b',{adj:1}],['entrega','Entregar para avaliação','#0ca30c',{ret:1}]]},
+ av:{n:'Vídeo',ins:1,st:[['roteiro','Roteiro','#8a96a6'],['capt','Captação agendada','#6250d6'],['captada','Captado','#2a78d6'],['edicao','Em edição','#e87ba4'],['revisao','Revisão interna','#eda100'],['ajustes','Ajustes','#d03b3b',{adj:1}],['entrega','Entregar para avaliação','#0ca30c',{ret:1}]]},
  crm:{n:'CRM',ins:2,st:[['novo','Novo lead','#8a96a6',{p:10}],['contato','Primeiro contato','#2a78d6',{p:20}],['reuniao','Diagnóstico / reunião','#6250d6',{p:40}],['proposta','Proposta enviada','#eda100',{p:60}],['neg','Negociação','#eb6834',{p:80}],['ganho','Ganho','#0ca30c',{p:100,won:1}],['perdido','Perdido','#d03b3b',{p:0,lost:1}]]}
 };
 function stages(b){const d=BOARDS[b],base=d.st.map(s=>({id:s[0],n:s[1],c:s[2],...(s[3]||{})}));const cu=L(D.config.stages&&D.config.stages[b]).sort((a,c)=>(a.o||0)-(c.o||0));if(cu.length)base.splice(base.length-d.ins,0,...cu.map(x=>({id:x.id,n:x.n,c:x.c||'#1f66f0',custom:1,p:x.p})));return base}
@@ -761,11 +865,14 @@ const stOf=(b,i)=>stages(b).find(s=>s.id==i)||stages(b)[0];
 /* ---------- roteador ---------- */
 const NAV=[
  ['home','Home','home'],
- ['g','Blueprint'],['clientes','Clientes','users'],['calendario','Calendário','cal'],['conteudos','Conteúdos','layers'],['validacao','Validação','shield'],
+ ['g','Blueprint'],['clientes','Clientes','users'],['calendario','Calendário','cal'],['criativos','Criativos','layers'],['validacao','Validação','shield'],['carteiro','Carteiro','mail'],
  ['g','Comercial'],['crm','CRM','funnel'],['metas-comerciais','Metas comerciais','target'],
- ['g','Criativo'],['design','Design','pen'],['audiovisual','Audiovisual','film'],
  ['g','Equipe'],['chat','Chat','chat'],['metas','Metas da equipe','trophy'],['configuracoes','Configurações','gear']
 ];
+const ALIAS={conteudos:'conteudo',design:'design',audiovisual:'av'};
+const HIDE={designer:['clientes','validacao','carteiro','crm','metas-comerciais'],video:['clientes','validacao','carteiro','crm','metas-comerciais'],social:['crm','metas-comerciais']};
+const pageOk=p=>isAdm()||!(HIDE[mySetor()]||[]).includes(p);
+const navFor=()=>{const r=NAV.filter(n=>n[0]=='g'||pageOk(n[0]));return r.filter((n,i)=>n[0]!='g'||(r[i+1]&&r[i+1][0]!='g'))};
 const PAGES={};let cur='home',first=true;
 function path(){return location.pathname.replace(/^\/+|\/+$/g,'')||''}
 function go(p,rp){p=p.replace(/^\//,'');if(rp)history.replaceState({},'','/'+p);else history.pushState({},'','/'+p);route()}
@@ -773,10 +880,16 @@ window.addEventListener('popstate',()=>route());
 document.addEventListener('click',e=>{const a=e.target.closest('a[data-l]');if(a&&!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&a.target!='_blank'){e.preventDefault();go(a.getAttribute('href'))}const t=e.target.closest('[data-a]');if(t&&A[t.dataset.a]){if(!/^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName))e.preventDefault();A[t.dataset.a](t.dataset,e,t)}});
 document.addEventListener('change',e=>{const t=e.target.closest('[data-c]');if(t&&A[t.dataset.c])A[t.dataset.c](t.dataset,e,t)});
 document.addEventListener('input',e=>{const t=e.target.closest('[data-in]');if(t&&A[t.dataset.in])A[t.dataset.in](t.dataset,e,t)});
+let SBL=null;
+const sbLocked=()=>{if(SBL===null){try{SBL=localStorage.getItem('bp_sbl')=='1'}catch(e){SBL=false}}return SBL};
+function applyLock(){const v=sbLocked();document.body.classList.toggle('sbl',v);const sb=$('.sb');if(sb)sb.classList.toggle('lk',v);const b=$('.pin');if(b){b.classList.toggle('on',v);b.setAttribute('aria-pressed',v?'true':'false');b.setAttribute('title',v?'Menu fixo · clique para recolher sozinho':'Fixar menu aberto');b.innerHTML=ic(v?'lock':'unlock')}}
+A.sbLock=()=>{SBL=!sbLocked();try{localStorage.setItem('bp_sbl',SBL?'1':'0')}catch(e){}applyLock()};
 function shell(){
- $('#app').innerHTML=`<aside class="sb" aria-label="Menu principal"><a class="br" href="/home" data-l><span class="tile"><span class="mk"></span></span><span class="bn tx"><b>Blueprint</b><small>Owl · gestão interna</small></span></a><nav id="nav">${NAV.map(n=>n[0]=='g'?`<div class="ng tx">${n[1]}</div>`:`<a href="/${n[0]}" data-l data-p="${n[0]}">${ic(n[2])}<span class="tx">${n[1]}</span><span class="bd" hidden></span></a>`).join('')}</nav><div class="sbf"><button class="lo" data-a="search" title="Ctrl+K">${ic('search')}<span class="tx">Buscar <kbd style="opacity:.6">Ctrl K</kbd></span></button><div class="sy" id="sy"></div><a class="usr" href="/configuracoes" data-l>${uav(ME)}<span class="tx"><b>${esc(ME.name)}</b><small>${esc(ME.cargo||(isAdm()?'Administrador':'Membro'))}</small></span></a><button class="lo" data-a="logout">${ic('logout')}<span class="tx">Sair</span></button></div></aside><main class="mn"><div id="view"></div></main><div id="gsroot"></div>`;syncUI()}
+ const lk=sbLocked();document.body.classList.toggle('sbl',lk);
+ $('#app').innerHTML=`<aside class="sb${lk?' lk':''}" aria-label="Menu principal"><div class="brw"><a class="br" href="/home" data-l><span class="tile"><span class="mk"></span></span><span class="bn tx"><b>Blueprint</b><small>Owl · gestão interna</small></span></a><button class="pin tx${lk?' on':''}" data-a="sbLock" aria-pressed="${lk}" aria-label="Fixar menu aberto" title="${lk?'Menu fixo · clique para recolher sozinho':'Fixar menu aberto'}">${ic(lk?'lock':'unlock')}</button></div><nav id="nav">${navFor().map(n=>n[0]=='g'?`<div class="ng tx">${n[1]}</div>`:`<a href="/${n[0]}" data-l data-p="${n[0]}" title="${n[1]}">${ic(n[2])}<span class="tx">${n[1]}</span><span class="bd" hidden></span></a>`).join('')}</nav></aside><main class="mn"><header class="tb"><button class="tsr" data-a="search" aria-label="Buscar">${ic('search')}<span>Buscar clientes, conteúdos, leads…</span><kbd>Ctrl K</kbd></button><div class="tr"><div class="sy" id="sy"></div><a class="tu" href="/configuracoes" data-l title="Meu perfil e configurações">${uav(ME)}<span><b>${esc(ME.name.split(' ')[0])}</b><small>${esc(ME.cargo||(isAdm()?'Administrador':SETORES[mySetor()]||'Membro'))}</small></span></a><button class="tlo" data-a="logout" aria-label="Sair" data-tt="Sair">${ic('power')}</button></div></header><div id="view"></div></main><div id="gsroot"></div>`;syncUI()}
 function route(){
- if(!ME)return;let p=path();if(!p||!PAGES[p]){p='home';history.replaceState({},'','/home')}
+ if(!ME)return;let p=path();if(ALIAS[p]){CR.tab=ALIAS[p];history.replaceState({},'','/criativos');p='criativos'}
+ if(!p||!PAGES[p]||!pageOk(p)){p='home';history.replaceState({},'','/home')}
  cur=p;first=true;closeModal(true);$$('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.p==p));
  document.title=PAGES[p].t+' · Blueprint';draw(true);
 }
@@ -852,14 +965,14 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&ME)pull(t
 
 /* ---------- busca global ---------- */
 function openSearch(){closeSearch();const g=document.createElement('div');g.id='gs';g.className='md';g.style.alignItems='start';g.innerHTML=`<div class="bx" style="margin-top:12vh;width:min(100%,600px);padding:14px"><input id="gsi" placeholder="Buscar clientes, conteúdos, leads, pessoas…" autocomplete="off" style="font-size:1.05rem"><div id="gsr" class="ul" style="max-height:52vh;overflow:auto"></div></div>`;document.body.appendChild(g);g.addEventListener('click',e=>{if(e.target===g)closeSearch()});const i=$('#gsi');i.focus();const run=()=>{const q=i.value.trim().toLowerCase();if(!q){$('#gsr').innerHTML='<li class="emp" style="display:block">Digite para buscar.</li>';return}
- const rs=[];L(D.clients).forEach(c=>{if((c.name+' '+(c.contact||'')+' '+(c.segment||'')).toLowerCase().includes(q))rs.push(['users',c.name,'Cliente · '+(c.segment||''),'clientes','c',c.id])});
- L(D.contents).forEach(c=>{if((c.title+' '+cname(c.client)+' '+(c.caption||'')).toLowerCase().includes(q))rs.push(['layers',c.title,'Conteúdo · '+cname(c.client)+' · '+BOARDS[c.board||'conteudo'].n,{conteudo:'conteudos',design:'design',av:'audiovisual'}[c.board||'conteudo'],'k',c.id])});
- L(D.crm).forEach(c=>{if((c.name+' '+(c.company||'')+' '+(c.contact||'')).toLowerCase().includes(q))rs.push(['funnel',c.name,'Lead · '+(c.company||'')+' · '+stOf('crm',c.stage).n,'crm','l',c.id])});
+ const rs=[];if(pageOk('clientes'))L(D.clients).forEach(c=>{if((c.name+' '+(c.contact||'')+' '+(c.segment||'')).toLowerCase().includes(q))rs.push(['users',c.name,'Cliente · '+(c.segment||''),'clientes','c',c.id])});
+ L(D.contents).forEach(c=>{if(myBoards().includes(c.board||'conteudo')&&(c.title+' '+cname(c.client)+' '+(c.caption||'')).toLowerCase().includes(q))rs.push(['layers',c.title,'Conteúdo · '+cname(c.client)+' · '+BOARDS[c.board||'conteudo'].n,'criativos','k',c.id])});
+ if(pageOk('crm'))L(D.crm).forEach(c=>{if((c.name+' '+(c.company||'')+' '+(c.contact||'')).toLowerCase().includes(q))rs.push(['funnel',c.name,'Lead · '+(c.company||'')+' · '+stOf('crm',c.stage).n,'crm','l',c.id])});
  userList().forEach(u=>{if(u.name.toLowerCase().includes(q))rs.push(['chat',u.name,'Equipe · '+(u.cargo||''),'chat','u',u.id])});
  $('#gsr').innerHTML=rs.slice(0,30).map((r,k)=>`<li data-a="gsgo" data-p="${r[3]}" data-t="${r[4]}" data-i="${r[5]}">${ic(r[0])}<div><b>${esc(r[1])}</b><small>${esc(r[2])}</small></div></li>`).join('')||'<li class="emp" style="display:block">Nada encontrado.</li>'};i.oninput=run;run()}
 function closeSearch(){const g=$('#gs');if(g)g.remove()}
 A.search=openSearch;
-A.gsgo=d=>{closeSearch();go(d.p);setTimeout(()=>{if(d.t=='c')A.cliOpen({i:d.i});if(d.t=='k')A.kOpen({i:d.i});if(d.t=='l')A.leadOpen({i:d.i});if(d.t=='u'&&A.chatDm)A.chatDm({u:d.i})},60)};
+A.gsgo=d=>{closeSearch();if(d.t=='k'&&D.contents[d.i])CR.tab=D.contents[d.i].board||'conteudo';go(d.p);setTimeout(()=>{if(d.t=='c')A.cliOpen({i:d.i});if(d.t=='k')A.kOpen({i:d.i});if(d.t=='l')A.leadOpen({i:d.i});if(d.t=='u'&&A.chatDm)A.chatDm({u:d.i})},60)};
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()=='k'&&ME){e.preventDefault();openSearch()}});
 
 /* ---------- imagens / arquivos ---------- */
@@ -917,7 +1030,7 @@ const Q={
  months(n,end){const r=[],d=new Date();d.setDate(1);if(end)d.setMonth(d.getMonth()+end);for(let i=n-1;i>=0;i--){const x=new Date(d.getFullYear(),d.getMonth()-i,1);r.push(ym(x))}return r},
  rev(m){let paid=0,open=0,over=0;L(D.clients).forEach(c=>{const s=Q.payState(c,m);const p=c.pay&&c.pay[m];if(s=='pago')paid+=num(p.value||c.fee);else if(s=='pendente')open+=num(c.fee);else if(s=='atrasado')over+=num(c.fee)});return {paid,open,over}},
  overdueClients(){const ms=Q.months(12);return L(D.clients).map(c=>{const ls=ms.filter(m=>Q.payState(c,m)=='atrasado');return {c,n:ls.length,v:ls.length*num(c.fee)}}).filter(x=>x.n)},
- cts:()=>L(D.contents).map(c=>({...c,board:c.board||'conteudo'})),
+ cts:()=>L(D.contents).map(c=>({...c,board:c.board||'conteudo'})).filter(c=>myBoards().includes(c.board)),
  isLate(c){if(c.board=='conteudo')return !!c.date&&c.date<TODAY()&&!['agendado','aprcli'].includes(c.stage);return !!c.due&&c.due<TODAY()},
  prevIds:c=>Object.keys(c.prev||{}).sort(),
  goal(y,kind,i){const g=(D.config.goals&&D.config.goals.com&&D.config.goals.com[y])||{};const mv=m=>+g['m'+pad(m)]||0;if(kind=='m')return mv(i);if(kind=='q'){if(+g['q'+i])return +g['q'+i];return mv(i*3-2)+mv(i*3-1)+mv(i*3)}if(+g.a)return +g.a;let s=0;for(let m=1;m<=12;m++)s+=mv(m);return s},
@@ -931,7 +1044,7 @@ const Q={
   return st},
  xp:s=>s.entregas*10+s.pontual*5+s.vendas*50+s.atividades*3+s.validados*15,
  monthRange(m){const [y,mo]=m.split('-').map(Number);return [m+'-01',m+'-'+pad(new Date(y,mo,0).getDate())]},
- sectorOf:c=>c.board=='design'?'Design':c.board=='av'?'Audiovisual':'Conteúdos'
+ sectorOf:c=>c.board=='design'?'Arte e foto':c.board=='av'?'Vídeo':'Conteúdos'
 };
 const LVL=[0,100,250,450,700,1000,1400,1900,2500,3200,4000];
 const lvOf=x=>{let l=0;while(l<LVL.length-1&&x>=LVL[l+1])l++;return l+1};
@@ -942,6 +1055,7 @@ function dtBox(s,lt){const d=pd(s);return d?`<span class="dt ${lt?'late':''}"><b
 
 /* ===================== HOME ===================== */
 PAGES.home={t:'Home',r(){
+ if(['social','designer','video'].includes(mySetor()))return homeLite();
  const now=new Date(),mm=ym(now),[ma,mb]=Q.monthRange(mm),y=now.getFullYear(),mo=now.getMonth()+1,q=Math.ceil(mo/3);
  const cts=Q.cts(),ac=Q.active(),mrr=Q.mrr(),rv=Q.rev(mm);
  const gM=Q.goal(y,'m',mo),sM=Q.sold(ma,mb).v,gQ=Q.goal(y,'q',q),sQ=Q.sold(y+'-'+pad(q*3-2)+'-01',y+'-'+pad(q*3)+'-31').v,gA=Q.goal(y,'a'),sA=Q.sold(y+'-01-01',y+'-12-31').v;
@@ -988,8 +1102,8 @@ PAGES.home={t:'Home',r(){
  <div class="pn" style="margin-bottom:14px;animation-delay:.2s"><h3>Próximas atividades por setor</h3><p class="sub">O que vence primeiro em cada área. Clique para abrir.</p>
   <div class="gr" style="grid-template-columns:repeat(4,1fr);gap:22px">
    ${secCol('Comercial','funnel',crmNext.length+(open.length>5?'+':''),open.filter(l=>l.next&&l.next<TODAY()).length,crmNext.map(l=>li(l.name,l.next,l.next<TODAY(),(l.nextAct||'Contato')+' · '+stOf('crm',l.stage).n,`data-a="goL" data-i="${l.id}"`)).join(''))}
-   ${secCol('Design','pen',des.length,des.filter(Q.isLate).length,des.slice(0,5).map(kli).join(''))}
-   ${secCol('Audiovisual','film',av.length,av.filter(Q.isLate).length,av.slice(0,5).map(kli).join(''))}
+   ${secCol('Arte e foto','photo',des.length,des.filter(Q.isLate).length,des.slice(0,5).map(kli).join(''))}
+   ${secCol('Vídeo','video',av.length,av.filter(Q.isLate).length,av.slice(0,5).map(kli).join(''))}
    ${secCol('Publicações','cal',pub.length,0,pub.slice(0,5).map(c=>li(c.title,c.date,false,cname(c.client)+' · '+TYPES[c.type||'feed'],`data-a="goK" data-i="${c.id}"`)).join(''))}
   </div></div>
  <div class="gr g3" style="margin-bottom:14px">
@@ -1007,7 +1121,7 @@ PAGES.home={t:'Home',r(){
    <ul class="ul" style="margin-top:10px">${rej.slice(0,3).map(c=>li(c.title,c.cli&&c.cli.t?ymd(new Date(c.cli.t)):'',1,cname(c.client)+' · '+((c.cli&&c.cli.msg)||'').slice(0,40),`data-a="goK" data-i="${c.id}"`)).join('')}</ul></div>
   <div class="pn" style="animation-delay:.5s"><div class="hd"><div><h3>Ranking da equipe</h3><p class="sub">Pontos por entregas, vendas e atividades.</p></div><a href="/metas" data-l>Metas</a></div><ul class="ul">${rank.map((r,i)=>`<li style="cursor:default"><b style="font:800 1.1rem var(--display);width:20px;color:${i==0?'#c98a00':'var(--mu)'}">${i+1}</b>${uav(r.u,'m')}<div><b>${esc(r.u.name)}</b><small>Nível ${lvOf(r.xp)}</small></div><span class="r"><b style="color:var(--tx)">${r.xp}</b> pts</span></li>`).join('')||'<li class="emp" style="display:block">Sem dados ainda.</li>'}</ul></div>
  </div>`}};
-A.goK=d=>{const c=D.contents[d.i];if(!c)return;const b=c.board||'conteudo';go({conteudo:'conteudos',design:'design',av:'audiovisual'}[b]);setTimeout(()=>A.kOpen({i:d.i}),60)};
+A.goK=d=>{const c=D.contents[d.i];if(!c)return;const b=c.board||'conteudo';CR.tab=b;go('criativos');setTimeout(()=>A.kOpen({i:d.i}),60)};
 A.goL=d=>{go('crm');setTimeout(()=>A.leadOpen({i:d.i}),60)};
 
 /* ===================== CLIENTES ===================== */
@@ -1118,24 +1232,27 @@ document.addEventListener('dragover',e=>{if(!dragId)return;const col=e.target.cl
  if(e.clientY<90)scrollBy(0,-16);else if(e.clientY>innerHeight-90)scrollBy(0,16)});
 document.addEventListener('drop',e=>{const col=e.target.closest('.col');if(!dragId||!col||col.dataset.b!=dragB)return;e.preventDefault();const i=dragId;dragId=null;dragging=false;$$('.ov,.dg').forEach(x=>x.classList.remove('ov','dg'));if(DROP[dragB])DROP[dragB](i,col.dataset.s)});
 
-/* ===================== Conteúdos / Design / Audiovisual ===================== */
+/* ===================== Criativos: Conteúdos · Arte e foto · Vídeo ===================== */
 const P_k={conteudo:{q:'',cl:'',rs:''},design:{q:'',cl:'',rs:''},av:{q:'',cl:'',rs:''}};
 const PRIO={alta:['Alta','#d03b3b'],media:['Média','#eda100'],baixa:['Baixa','#8a96a6']};
 const bpath={conteudo:'conteudos',design:'design',av:'audiovisual'};
+const CR={tab:(()=>{try{return localStorage.getItem('bp_crt')||'conteudo'}catch(e){return 'conteudo'}})()};
+const CTAB={conteudo:{ic:'layers',t:'Conteúdos',d:'Ideias, briefings e legendas',k:'Planejamento'},design:{ic:'photo',t:'Arte e foto',d:'Posts, carrosséis, capas e fotos',k:'Imagem'},av:{ic:'video',t:'Vídeo',d:'Reels, captações e edição',k:'Vídeo'}};
+const canNewIn=b=>isAdm()||(canEd('cont')&&canBoard(b));
+function crTabs(){const vis=myBoards(),raw=L(D.contents);
+ return `<div class="crt" role="tablist" aria-label="Áreas criativas">${['conteudo','design','av'].filter(b=>vis.includes(b)).map(b=>{const t=CTAB[b],n=raw.filter(c=>(c.board||'conteudo')==b&&!['agendado','aprcli'].includes(c.stage)&&c.stage!='entrega').length,late=Q.cts().filter(c=>c.board==b&&Q.isLate(c)).length;return `<button type="button" role="tab" aria-selected="${CR.tab==b}" class="crb b-${b}${CR.tab==b?' on':''}" data-a="crTab" data-b="${b}"><span class="cri">${ic(t.ic)}</span><span class="crx"><b>${t.t}</b><small>${t.d}</small></span><em>${n}</em>${late?`<i class="crl" title="${late} em atraso">${late}</i>`:''}</button>`}).join('')}${vis.length<3?`<span class="crn">${ic('lock')} Você vê só a sua área</span>`:`<span class="crn">${ic('video')} Vídeo e ${ic('photo')} Arte/foto ficam em abas separadas</span>`}</div>`}
+A.crTab=d=>{CR.tab=d.b;try{localStorage.setItem('bp_crt',d.b)}catch(e){}draw(false)};
 function boardPage(b){
  const f=P_k[b],all=Q.cts().filter(c=>c.board==b);
  const cards=all.filter(c=>(!f.cl||c.client==f.cl)&&(!f.rs||[c.resp,c.designer,c.editor].includes(f.rs))&&(!f.q||(c.title+' '+cname(c.client)).toLowerCase().includes(f.q.toLowerCase())));
  const st=stages(b);
- const dept=b=='conteudo'?`<div class="chips" style="margin-bottom:12px"><span style="color:var(--mu);font-weight:700;align-self:center">Em produção fora daqui:</span><a href="/design" data-l class="chip2">${ic('pen')} Design <b>${Q.cts().filter(c=>c.board=='design').length}</b></a><a href="/audiovisual" data-l class="chip2">${ic('film')} Audiovisual <b>${Q.cts().filter(c=>c.board=='av').length}</b></a></div>`:'';
- const sub={conteudo:'Planejamento, legendas e avaliação. Ao enviar para Design ou Audiovisual, o card sai daqui e volta em <b>Avaliação</b> quando for entregue.',design:'Demandas de arte. Ao entregar, o conteúdo volta para Conteúdos, em Avaliação.',av:'Vídeos, captações e edições. Ao entregar, o conteúdo volta para Conteúdos, em Avaliação.'}[b];
- const lateN=cards.filter(Q.isLate).length;
- return ph(BOARDS[b].n,sub,`<input class="srch" data-in="kQ" data-b="${b}" placeholder="Buscar…" value="${esc(f.q)}"><select class="flt" data-c="kCl" data-b="${b}"><option value="">Todos os clientes</option>${L(D.clients).sort((x,y)=>x.name>y.name?1:-1).map(c=>`<option value="${c.id}" ${f.cl==c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select><select class="flt" data-c="kRs" data-b="${b}"><option value="">Toda a equipe</option>${userList().map(u=>`<option value="${u.id}" ${f.rs==u.id?'selected':''}>${esc(u.name)}</option>`).join('')}</select>${canEd('cont')?`<button class="btn" data-a="kNew" data-b="${b}">${ic('plus')}Novo conteúdo</button>`:''}`)+dept+
- `<div class="kb">${st.map(s=>{const cs=cards.filter(c=>c.stage==s.id).sort((x,y)=>(x.due||x.date||'9')>(y.due||y.date||'9')?1:-1);return `<section class="col" data-b="${b}" data-s="${s.id}" aria-label="${esc(s.n)}"><header><i style="background:${s.c}"></i><b>${esc(s.n)}</b><em>${cs.length}</em>${s.ret?'<span title="Cards soltos aqui voltam para Conteúdos">↩ volta</span>':''}${canEd('cont')&&!s.ret&&!s.adj&&(b=='conteudo'?['ideia','legenda'].includes(s.id):['fila','roteiro'].includes(s.id))?`<button class="add" data-a="kNew" data-b="${b}" data-s="${s.id}" aria-label="Adicionar">+</button>`:''}${s.custom&&isAdm()&&!cs.length?`<button class="add" data-a="stDel" data-b="${b}" data-s="${s.id}" title="Remover etapa" aria-label="Remover etapa">×</button>`:''}</header><div class="cl2">${cs.map(kCard).join('')||''}</div></section>`}).join('')}${isAdm()?`<div class="gcol"><button class="addst" data-a="stAdd" data-b="${b}">+ Adicionar etapa</button></div>`:''}</div>`}
+ const sub={conteudo:'Planejamento, legendas e avaliação. Ao enviar para <b>Arte e foto</b> ou <b>Vídeo</b>, o card sai daqui e volta em <b>Avaliação</b> quando for entregue.',design:'Demandas de <b>arte e foto</b>: posts, carrosséis, capas. Ao entregar, o conteúdo volta para Conteúdos, em Avaliação.',av:'Demandas de <b>vídeo</b>: roteiro, captação e edição. Ao entregar, o conteúdo volta para Conteúdos, em Avaliação.'}[b];
+ const newB=canNewIn(b);
+ return ph('Criativos',sub,`<input class="srch" data-in="kQ" data-b="${b}" placeholder="Buscar…" value="${esc(f.q)}"><select class="flt" data-c="kCl" data-b="${b}"><option value="">Todos os clientes</option>${L(D.clients).sort((x,y)=>x.name>y.name?1:-1).map(c=>`<option value="${c.id}" ${f.cl==c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select><select class="flt" data-c="kRs" data-b="${b}"><option value="">Toda a equipe</option>${userList().map(u=>`<option value="${u.id}" ${f.rs==u.id?'selected':''}>${esc(u.name)}</option>`).join('')}</select>${newB?`<button class="btn" data-a="kNew" data-b="${b}">${ic('plus')}${b=='conteudo'?'Novo conteúdo':b=='design'?'Nova arte':'Novo vídeo'}</button>`:''}`)+crTabs()+
+ `<div class="kb">${st.map(s=>{const cs=cards.filter(c=>c.stage==s.id).sort((x,y)=>(x.due||x.date||'9')>(y.due||y.date||'9')?1:-1);return `<section class="col" data-b="${b}" data-s="${s.id}" aria-label="${esc(s.n)}"><header><i style="background:${s.c}"></i><b>${esc(s.n)}</b><em>${cs.length}</em>${s.ret?'<span title="Cards soltos aqui voltam para Conteúdos">↩ volta</span>':''}${newB&&!s.ret&&!s.adj&&(b=='conteudo'?['ideia','legenda'].includes(s.id):['fila','roteiro'].includes(s.id))?`<button class="add" data-a="kNew" data-b="${b}" data-s="${s.id}" aria-label="Adicionar">+</button>`:''}${s.custom&&isAdm()&&!cs.length?`<button class="add" data-a="stDel" data-b="${b}" data-s="${s.id}" title="Remover etapa" aria-label="Remover etapa">×</button>`:''}</header><div class="cl2">${cs.map(kCard).join('')||''}</div></section>`}).join('')}${isAdm()?`<div class="gcol"><button class="addst" data-a="stAdd" data-b="${b}">+ Adicionar etapa</button></div>`:''}</div>`}
 const kCard=c=>{const b=c.board,s=stOf(b,c.stage),lt=Q.isLate(c),dt=b=='conteudo'?c.date:c.due,pr=PRIO[c.prio],ad=L(c.adj).sort((x,y)=>y.t-x.t)[0],who=b=='design'?c.designer:b=='av'?c.editor:c.resp;
- return `<article class="cd" draggable="${canAct('cont')}" data-id="${c.id}" data-b="${b}" style="--c:${ccolor(c.client)}" data-a="kOpen" data-i="${c.id}" tabindex="0"><div class="r1"><h4>${esc(c.title)}</h4>${pr&&b!='conteudo'?`<span title="Prioridade ${pr[0]}" style="width:10px;height:10px;border-radius:50%;background:${pr[1]};flex:none;margin-top:4px"></span>`:''}</div><p>${esc(cname(c.client))}</p><div class="mt"><span>${TYPES[c.type||'feed']}</span>${dt?`<span class="${lt?'od':''}">${ic('cal').replace('class="i"','class="i" style="width:11px;height:11px;vertical-align:-1px"')} ${fd(dt)}${lt?' · atrasado':''}</span>`:''}${c.cli&&c.stage=='aprcli'?'<span class="vl">✓ cliente</span>':''}${b=='av'&&c.shoot?`<span>🎬 ${fd(c.shoot)}</span>`:''}</div>${c.stage=='reprovado'&&c.cli&&c.cli.msg?`<div class="ajc">“${esc(c.cli.msg.slice(0,90))}”</div>`:ad&&s.adj?`<div class="ajc">Ajuste: ${esc(ad.text.slice(0,90))}</div>`:''}<footer>${who?uav(who,'s')+`<span class="rn">${esc(uname(who).split(' ')[0])}</span>`:'<span class="rn">Sem responsável</span>'}${Object.keys(c.files||{}).length?`<span>${ic('clip').replace('class="i"','class="i" style="width:13px;height:13px"')} ${Object.keys(c.files).length}</span>`:''}${ad?`<span title="Ajustes pedidos">↻ ${L(c.adj).length}</span>`:''}</footer></article>`};
-PAGES.conteudos={t:'Conteúdos',r:()=>boardPage('conteudo')};
-PAGES.design={t:'Design',r:()=>boardPage('design')};
-PAGES.audiovisual={t:'Audiovisual',r:()=>boardPage('av')};
+ return `<article class="cd" draggable="${canBoard(b)}" data-id="${c.id}" data-b="${b}" style="--c:${ccolor(c.client)}" data-a="kOpen" data-i="${c.id}" tabindex="0"><div class="r1"><h4>${esc(c.title)}</h4>${pr&&b!='conteudo'?`<span title="Prioridade ${pr[0]}" style="width:10px;height:10px;border-radius:50%;background:${pr[1]};flex:none;margin-top:4px"></span>`:''}</div><p>${esc(cname(c.client))}</p><div class="mt"><span class="kt ${b=='av'||(b=='conteudo'&&c.type=='reels')?'v':'p'}">${ic(b=='av'||(b=='conteudo'&&c.type=='reels')?'video':'photo')}${b=='conteudo'?TYPES[c.type||'feed']:b=='av'?'Vídeo':'Arte/foto'}</span>${b!='conteudo'?`<span>${TYPES[c.type||'feed']}</span>`:''}${dt?`<span class="${lt?'od':''}">${ic('cal').replace('class="i"','class="i" style="width:11px;height:11px;vertical-align:-1px"')} ${fd(dt)}${lt?' · atrasado':''}</span>`:''}${c.cli&&c.stage=='aprcli'?'<span class="vl">✓ cliente</span>':''}${b=='av'&&c.shoot?`<span>🎬 ${fd(c.shoot)}</span>`:''}</div>${c.stage=='reprovado'&&c.cli&&c.cli.msg?`<div class="ajc">“${esc(c.cli.msg.slice(0,90))}”</div>`:ad&&s.adj?`<div class="ajc">Ajuste: ${esc(ad.text.slice(0,90))}</div>`:''}<footer>${who?uav(who,'s')+`<span class="rn">${esc(uname(who).split(' ')[0])}</span>`:'<span class="rn">Sem responsável</span>'}${Object.keys(c.files||{}).length?`<span>${ic('clip').replace('class="i"','class="i" style="width:13px;height:13px"')} ${Object.keys(c.files).length}</span>`:''}${ad?`<span title="Ajustes pedidos">↻ ${L(c.adj).length}</span>`:''}</footer></article>`};
+PAGES.criativos={t:'Criativos',r:()=>{const v=myBoards();if(!v.includes(CR.tab))CR.tab=v[0];return boardPage(CR.tab)}};
 A.kQ=(d,e)=>{P_k[d.b].q=e.target.value;const p=e.target.selectionStart;draw(false);const i=$('.srch');if(i){i.focus();i.setSelectionRange(p,p)}};
 A.kCl=(d,e)=>{P_k[d.b].cl=e.target.value;draw(false)};A.kRs=(d,e)=>{P_k[d.b].rs=e.target.value;draw(false)};
 A.stAdd=d=>modal(`<div class="hh"><h3>Nova etapa em ${BOARDS[d.b].n}</h3><button type="button" class="ib" data-a="mclose">${ic('x')}</button></div><label>Nome da etapa<input name="n" required autofocus maxlength="40"></label><label>Cor<input name="c" type="color" value="#1f66f0" style="height:40px;padding:3px"></label><p class="hint">A nova etapa entra antes da última coluna do quadro.</p><div class="act"><button type="button" class="btn o" data-a="mclose">Cancelar</button><button class="btn">Adicionar</button></div>`,{submit:async f=>{const o=form2(f);if(!o.n.trim())return false;const sid='c'+id();await W.set(`config/stages/${d.b}/${sid}`,{id:sid,n:o.n.trim(),c:o.c,o:Date.now()});toast('Etapa criada.')}});
@@ -1144,15 +1261,15 @@ A.stDel=async d=>{if(!await ask('Remover esta etapa vazia?','Remover',1))return;
 /* ---- movimentação ---- */
 const hist=(cid,text,k)=>W.set(`contents/${cid}/hist/${id()}`,{t:Date.now(),by:ME.uid,x:text,k:k||''});
 async function moveTo(cid,b,stg){
- if(!canAct('cont')){noSec('cont');return}
- const c=D.contents[cid];if(!c)return;const cb=c.board||'conteudo';if(cb==b&&c.stage==stg)return;const s=stOf(b,stg);
+ const c=D.contents[cid];if(!c)return;const cb=c.board||'conteudo';if(!canBoard(cb)){noBoard();return}
+ if(cb==b&&c.stage==stg)return;const s=stOf(b,stg);
  if(s.adj)return adjModal(cid,b,stg);
  if(s.ret)return deliver(cid);
  if(b=='conteudo'&&stg=='cliente'&&!await ask('Marcar como "Com o cliente"? Use a aba Validação para gerar o link de aprovação.','Mover'))return;
  await W.patch('contents/'+cid,{stage:stg});await hist(cid,`Movido para ${s.n}`,'m');
 }
 DROP.conteudo=(i,s)=>moveTo(i,'conteudo',s);DROP.design=(i,s)=>moveTo(i,'design',s);DROP.av=(i,s)=>moveTo(i,'av',s);
-async function deliver(cid){if(!canAct('cont')){noSec('cont');return}const c=D.contents[cid],b=c.board;await W.patch('contents/'+cid,{board:'conteudo',stage:'avaliacao',dept:b,deliveredBy:ME.uid,deliveredAt:Date.now()});await hist(cid,`Entregue por ${ME.name} (${BOARDS[b].n}) · voltou para Conteúdos › Avaliação`,'d');toast('Entregue! O conteúdo voltou para Conteúdos, em Avaliação.');closeModal(true)}
+async function deliver(cid){const c=D.contents[cid],b=c.board;if(!canBoard(b)){noBoard();return}await W.patch('contents/'+cid,{board:'conteudo',stage:'avaliacao',dept:b,deliveredBy:ME.uid,deliveredAt:Date.now()});await hist(cid,`Entregue por ${ME.name} (${BOARDS[b].n}) · voltou para Conteúdos › Avaliação`,'d');toast('Entregue! O conteúdo voltou para Conteúdos, em Avaliação.');closeModal(true)}
 function adjModal(cid,b,stg,pre){
  const c=D.contents[cid];const back=b=='back';const dest=back?(c.dept||'design'):b;
  modal(`<div class="hh"><div><h3>Pedir ajustes</h3><p class="hint">${esc(c.title)} · vai para ${BOARDS[dest].n} › Ajustes</p></div><button type="button" class="ib" data-a="mclose">${ic('x')}</button></div><label>O que precisa ser ajustado? <span class="hint">(obrigatório)</span><textarea name="x" required autofocus placeholder="Descreva com clareza o que deve mudar.">${esc(pre||'')}</textarea></label>${back?`<label>Novo prazo<input type="date" name="due" value="${esc(c.due&&c.due>=TODAY()?c.due:addD(TODAY(),2))}"></label>`:''}<div class="act"><button type="button" class="btn o" data-a="mclose">Cancelar</button><button class="btn">Enviar ajuste</button></div>`,{submit:async f=>{const o=form2(f);if(!o.x.trim()){f.x.classList.add('err');toast('Escreva o comentário do ajuste.',1);return false}
@@ -1165,20 +1282,20 @@ function sendModal(cid,dest){
 
 /* ---- modal do conteúdo ---- */
 const K={cur:null,nb:'conteudo',ns:null};
-A.kNew=d=>{if(!canEd('cont')){toast(isAdm()||canAct('cont')?'Apenas administradores podem criar conteúdos.':'Conteúdos são do setor Criativo.',1);return}K.cur=null;K.nb=d.b||({conteudo:'conteudo',design:'design',audiovisual:'av'}[cur])||'conteudo';K.ns=d.s||null;kModal({date:d.d||''})};
+A.kNew=d=>{const nb=d.b||CR.tab||'conteudo';if(!canNewIn(nb)){toast(isAdm()||canBoard(nb)?'Apenas administradores podem criar itens aqui.':'Esse quadro é de outra função.',1);return}K.cur=null;K.nb=nb;K.ns=d.s||null;kModal({date:d.d||''})};
 A.kOpen=d=>{const c=D.contents[d.i];if(!c)return;K.cur=d.i;kModal(clone(c,d.i))};
 const clone=(c,i)=>({...c,id:i,board:c.board||'conteudo'});
-function kFields(c,b,isNew){const ed=canEd('cont');
+function kFields(c,b,isNew){const ed=canEd('cont')&&canBoard(b);
  const cli=`<label>Cliente<select name="client" required><option value="">Selecione…</option>${L(D.clients).filter(x=>(x.status||'ativo')!='encerrado'||x.id==c.client).sort((x,y)=>x.name>y.name?1:-1).map(x=>`<option value="${x.id}" ${c.client==x.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select></label>`;
  const usr=(n,v)=>`<select name="${n}"><option value="">—</option>${userList().map(u=>`<option value="${u.id}" ${v==u.id?'selected':''}>${esc(u.name)}</option>`).join('')}</select>`;
  let h=`<div class="fg2"><label class="w">Título do conteúdo<input name="title" required value="${esc(c.title||'')}" placeholder="Ex.: Post de lançamento da coleção"></label>${cli}<label>Formato<select name="type">${Object.entries(TYPES).map(([k,v])=>`<option value="${k}" ${(c.type||'feed')==k?'selected':''}>${v}</option>`).join('')}</select></label><label>Data de publicação<input type="date" name="date" value="${esc(c.date||'')}"></label><label>Responsável pelo conteúdo${usr('resp',c.resp||ME.uid)}</label>`;
  if(b=='design')h+=`<label>Designer${usr('designer',c.designer)}</label><label>Prazo do design<input type="date" name="due" value="${esc(c.due||'')}"></label><label>Prioridade<select name="prio">${Object.entries(PRIO).map(([k,v])=>`<option value="${k}" ${(c.prio||'media')==k?'selected':''}>${v[0]}</option>`).join('')}</select></label><label>Tamanho / formato da arte<select name="fmt">${['Feed 1080×1350 (4:5)','Quadrado 1080×1080','Stories 1080×1920','Carrossel 1080×1350','Capa de Reels 1080×1920','Banner / anúncio','Outro'].map(x=>`<option ${c.fmt==x?'selected':''}>${x}</option>`).join('')}</select></label><label class="w">Texto que vai na arte<textarea name="arte" placeholder="Títulos, chamadas, CTA…">${esc(c.arte||'')}</textarea></label>`;
  if(b=='av')h+=`<label>Editor${usr('editor',c.editor)}</label><label>Prazo da edição<input type="date" name="due" value="${esc(c.due||'')}"></label><label>Prioridade<select name="prio">${Object.entries(PRIO).map(([k,v])=>`<option value="${k}" ${(c.prio||'media')==k?'selected':''}>${v[0]}</option>`).join('')}</select></label><label>Data da captação<input type="date" name="shoot" value="${esc(c.shoot||'')}"></label><label>Local / endereço<input name="loc" value="${esc(c.loc||'')}"></label><label>Equipamentos<input name="equip" value="${esc(c.equip||'')}" placeholder="Câmera, lentes, microfone, luz…"></label><label>Formato do vídeo<select name="vfmt">${['Reels 9:16','Stories 9:16','Vídeo horizontal 16:9','Vertical 4:5','Institucional 16:9','Anúncio'].map(x=>`<option ${c.vfmt==x?'selected':''}>${x}</option>`).join('')}</select></label><label>Resolução e fps<select name="res">${['1080p · 30 fps','1080p · 60 fps','4K · 30 fps','4K · 60 fps'].map(x=>`<option ${c.res==x?'selected':''}>${x}</option>`).join('')}</select></label><label>Duração alvo<input name="dur" value="${esc(c.dur||'')}" placeholder="Ex.: 30s"></label><label>Trilha / música<input name="trilha" value="${esc(c.trilha||'')}"></label><label>Link do vídeo (Drive, Vimeo…)<input name="vid" value="${esc(c.vid||'')}" placeholder="https://"></label><label class="w">Roteiro / decupagem<textarea name="script">${esc(c.script||'')}</textarea></label>`;
  h+=`<label class="w">Briefing / direcionamento<textarea name="brief" placeholder="Objetivo do conteúdo, tom, referências.">${esc(c.brief||'')}</textarea></label><label class="w">Legenda do post<textarea name="caption" style="min-height:120px" placeholder="Legenda completa com hashtags.">${esc(c.caption||'')}</textarea></label><label class="w">Referências (links)<input name="refs" value="${esc(c.refs||'')}"></label>`;
- if(isNew)h+=`<label class="w">Ao criar, enviar para<select name="send"><option value="">Manter em Conteúdos</option><option value="design">Design</option><option value="av">Audiovisual</option></select></label>`;
+ if(isNew&&b=='conteudo')h+=`<label class="w">Ao criar, enviar para<select name="send"><option value="">Manter em Conteúdos</option><option value="design">Arte e foto</option><option value="av">Vídeo</option></select></label>`;
  return h+'</div>'}
 function kModal(c){
- const isNew=!K.cur,b=c.board||K.nb,ed=canEd('cont');
+ const isNew=!K.cur,b=c.board||K.nb,ed=canEd('cont')&&canBoard(b);
  modal(`<div class="bx" id="km"><div class="hh"><div><h3 id="kt">${isNew?'Novo conteúdo':esc(c.title)}</h3><p class="hint" id="ks"></p></div><button type="button" class="ib" data-a="mclose" aria-label="Fechar">${ic('x')}</button></div>
  <div id="kx"></div>
  <form id="kf" novalidate><fieldset ${ed||isNew?'':'disabled'} style="border:0;padding:0;margin:0;min-width:0">${kFields(c,b,isNew)}</fieldset>${ed||isNew?`<div class="act" style="margin-top:14px">${!isNew&&isAdm()?`<button type="button" class="btn d" data-a="kDel">Excluir</button>`:''}<button type="button" class="btn o" data-a="mclose">Fechar</button><button class="btn" type="submit">${isNew?'Criar conteúdo':'Salvar alterações'}</button></div>`:`<div class="act"><button type="button" class="btn o" data-a="mclose">Fechar</button></div>`}</form></div>`,{raw:1,wide:1,nofocus:!isNew,sticky:1,
@@ -1191,9 +1308,9 @@ function kx(){const el=$('#kx');if(!el||!K.cur)return;const c=D.contents[K.cur];
  const h=$('#ks');if(h)h.innerHTML=`${esc(cname(cc.client))} · ${BOARDS[b].n} › <b>${esc(s.n)}</b>`;
  const files=L(cc.files).sort((x,y)=>x.t-y.t),adj=L(cc.adj).sort((x,y)=>y.t-x.t),hs=L(cc.hist).sort((x,y)=>y.t-x.t).slice(0,40),pv=Q.prevIds(cc);
  const res=findRes(cc.id);
- const act=canAct('cont');let acts='';
+ const act=canBoard(b);let acts='';
  if(!act){}
- else if(b=='conteudo'){acts+=`<button type="button" class="btn y" data-a="kSend" data-d="design">${ic('pen')}Enviar para Design</button><button type="button" class="btn y" data-a="kSend" data-d="av">${ic('film')}Enviar para Audiovisual</button>`;
+ else if(b=='conteudo'){acts+=`<button type="button" class="btn y" data-a="kSend" data-d="design">${ic('photo')}Enviar para Arte e foto</button><button type="button" class="btn y" data-a="kSend" data-d="av">${ic('video')}Enviar para Vídeo</button>`;
   if(cc.stage=='avaliacao'||cc.stage=='reprovado')acts+=`<button type="button" class="btn o" data-a="kBack">${ic('rep')}Pedir ajustes</button>`;
   if(cc.stage=='avaliacao')acts+=`<button type="button" class="btn o" data-a="kApr">${ic('check')}Aprovar internamente</button>`}
  else acts+=`<button type="button" class="btn" data-a="kDeliver">${ic('check')}Entregar para avaliação</button>`;
@@ -1209,8 +1326,8 @@ function kx(){const el=$('#kx');if(!el||!K.cur)return;const c=D.contents[K.cur];
  loadPrev(cc,pv)}
 async function loadPrev(c,pv){const imgs=[];for(const m of pv){try{imgs.push(await getMedia(m))}catch(e){}}const cl=D.clients[c.client]||{};const fm=$('#kf');const type=fm?fm.type.value:c.type;const cap=fm?fm.caption.value:c.caption;const el=$('#igp');if(el&&K.cur==c.id)el.innerHTML=igPost({handle:cl.handle||cl.name,avatar:cl.avatar,type,caption:cap,imgs,date:c.date,name:cl.name})}
 function findRes(cid){let r=null;L(D.approvals).forEach(a=>{const x=a.res&&a.res[cid];if(x&&(!r||x.t>r.t))r=x});return r}
-A.kStage=(d,e)=>{if(!canAct('cont'))return;const c=D.contents[K.cur];moveTo(K.cur,c.board||'conteudo',e.target.value).then(()=>setTimeout(kx,50))};
-A.kSend=d=>canAct('cont')&&sendModal(K.cur,d.d);
+A.kStage=(d,e)=>{const c=D.contents[K.cur];if(!c||!canBoard(c.board||'conteudo'))return;moveTo(K.cur,c.board||'conteudo',e.target.value).then(()=>setTimeout(kx,50))};
+A.kSend=d=>{const c=D.contents[K.cur];c&&canBoard(c.board||'conteudo')&&sendModal(K.cur,d.d)};
 A.kBack=()=>{const c=D.contents[K.cur];adjModal(K.cur,'back',null,c.stage=='reprovado'&&c.cli?c.cli.msg:'')};
 A.kApr=async()=>{await W.patch('contents/'+K.cur,{stage:'aprovado'});await hist(K.cur,'Aprovado internamente','m');kx()};
 A.kDeliver=()=>deliver(K.cur);
@@ -1255,7 +1372,7 @@ A.vNew=()=>{
 A.vCli=(d,e)=>{const cid=e.target.value,cs=Q.cts().filter(c=>c.client==cid&&c.board=='conteudo'&&c.stage!='agendado').sort((a,b)=>(a.date||'9')>(b.date||'9')?1:-1);$('#vl').innerHTML=cs.length?`<div class="sec">Conteúdos prontos para validar</div>`+cs.map(c=>`<label style="display:flex;gap:10px;align-items:center;font-weight:600;padding:6px 0;border-bottom:1px solid #edf1f9"><input type="checkbox" name="sel" value="${c.id}" ${['avaliacao','aprovado','cliente','reprovado'].includes(c.stage)?'checked':''}> <span style="flex:1">${esc(c.title)}<br><small style="color:var(--mu);font-weight:400">${TYPES[c.type||'feed']} · ${c.date?fdl(c.date):'sem data'} · ${esc(stOf('conteudo',c.stage).n)}${Q.prevIds(c).length?'':' · <b style="color:var(--rd)">sem imagem de prévia</b>'}</small></span></label>`).join(''):'<span class="hint">Este cliente não tem conteúdos em Conteúdos no momento.</span>'};
 /* sincroniza as respostas dos clientes com os cards */
 let syncing=false;
-window.syncAppr=async function(){if(syncing||!ME||pending||!canAct('cont'))return;syncing=true;try{for(const a of L(D.approvals)){for(const [cid,r] of Object.entries(a.res||{})){const c=D.contents[cid];if(!c||!r||!r.t)continue;if(c.cli&&c.cli.t>=r.t)continue;
+window.syncAppr=async function(){if(syncing||!ME||pending||!canBoard('conteudo'))return;syncing=true;try{for(const a of L(D.approvals)){for(const [cid,r] of Object.entries(a.res||{})){const c=D.contents[cid];if(!c||!r||!r.t)continue;if(c.cli&&c.cli.t>=r.t)continue;
  const upd={cli:{s:r.s,by:r.by||'',msg:r.msg||'',t:r.t,tok:a.id},board:'conteudo',stage:r.s=='ok'?'aprcli':'reprovado'};await W.patch('contents/'+cid,upd);await hist(cid,r.s=='ok'?`Aprovado pelo cliente (${r.by||'cliente'})`:`Reprovado pelo cliente (${r.by||'cliente'}): ${(r.msg||'').slice(0,160)}`,'m')}}}catch(e){console.error(e)}finally{syncing=false}};
 
 /* ===================== CRM ===================== */
@@ -1469,10 +1586,10 @@ A.cfgEmail=()=>modal(`<div class="hh"><h3>Alterar e-mail</h3><button type="butto
 /* equipe */
 function cfgEquipe(){const us=L(D.users).sort((a,b)=>(b.role=='admin')-(a.role=='admin')||a.name.localeCompare(b.name));
  return `<div class="pn"><div class="hd"><div><h3>Equipe</h3><p class="sub">Quem acessa o Blueprint e com qual permissão.</p></div><button class="btn" data-a="usrNew">${ic('plus')}Adicionar membro</button></div><table class="tb"><thead><tr><th>Pessoa</th><th>Cargo</th><th>Perfil</th><th>Setor</th><th>Comissão</th><th>Situação</th><th></th></tr></thead><tbody>${us.map(u=>`<tr><td><div style="display:flex;gap:10px;align-items:center">${uav(u,'m')}<div><b>${esc(u.name)}</b>${u.id==ME.uid?' <small>(você)</small>':''}<br><small style="color:var(--mu)">${esc(u.email||'')}</small></div></div></td><td>${esc(u.cargo||'—')}</td><td>${u.role=='admin'?stBadge('Administrador','on'):stBadge('Membro')}</td><td>${u.role=='admin'?'<small style="color:var(--mu)">todos</small>':esc(SETORES[u.setor||'geral'])}</td><td>${u.comm!=null&&u.comm!==''?u.comm+'%':'padrão'}</td><td>${u.active===false?stBadge('Desativado','of'):stBadge('Ativo','on')}</td><td class="ac"><button class="btn o sm" data-a="usrEdit" data-u="${u.id}">Editar</button></td></tr>`).join('')}</tbody></table></div>`}
-A.usrNew=()=>modal(`<div class="hh"><h3>Adicionar membro</h3><button type="button" class="ib" data-a="mclose">${ic('x')}</button></div><div class="fg2"><label class="w">Nome<input name="name" required></label><label class="w">E-mail de login<input type="email" name="email" required></label><label>Cargo<input name="cargo"></label><label>Perfil<select name="role"><option value="member">Membro</option><option value="admin">Administrador</option></select></label><label class="w">Setor <span class="hint">(define onde o membro pode mexer; nos demais setores ele só visualiza)</span><select name="setor">${Object.entries(SETORES).map(([k,v])=>`<option value="${k}" ${(''||'geral')==k?'selected':''}>${v}${k=='geral'?' — todas as áreas':k=='comercial'?' — CRM e clientes':' — conteúdos, design, audiovisual e validação'}</option>`).join('')}</select></label><label class="w">Senha temporária<input name="pw" value="${tokn().slice(0,10)}" required minlength="6"><span class="hint">Passe esta senha ao membro; ele pode trocá-la em Configurações.</span></label></div><div class="er" id="pe" style="color:var(--rd)"></div><div class="act"><button type="button" class="btn o" data-a="mclose">Cancelar</button><button class="btn">Criar acesso</button></div>`,{submit:async f=>{const o=form2(f),e=$('#pe');if(!o.name.trim()||!o.email.trim()||o.pw.length<6){e.textContent='Preencha nome, e-mail e uma senha de ao menos 6 caracteres.';return false}
+A.usrNew=()=>modal(`<div class="hh"><h3>Adicionar membro</h3><button type="button" class="ib" data-a="mclose">${ic('x')}</button></div><div class="fg2"><label class="w">Nome<input name="name" required></label><label class="w">E-mail de login<input type="email" name="email" required></label><label>Cargo<input name="cargo"></label><label>Perfil<select name="role"><option value="member">Membro</option><option value="admin">Administrador</option></select></label><label class="w">Setor <span class="hint">(define onde o membro pode mexer; nos demais setores ele só visualiza)</span><select name="setor">${Object.entries(SETORES).map(([k,v])=>`<option value="${k}" ${(''||'geral')==k?'selected':''}>${v} — ${SETOR_DESC[k]}</option>`).join('')}</select></label><label class="w">Senha temporária<input name="pw" value="${tokn().slice(0,10)}" required minlength="6"><span class="hint">Passe esta senha ao membro; ele pode trocá-la em Configurações.</span></label></div><div class="er" id="pe" style="color:var(--rd)"></div><div class="act"><button type="button" class="btn o" data-a="mclose">Cancelar</button><button class="btn">Criar acesso</button></div>`,{submit:async f=>{const o=form2(f),e=$('#pe');if(!o.name.trim()||!o.email.trim()||o.pw.length<6){e.textContent='Preencha nome, e-mail e uma senha de ao menos 6 caracteres.';return false}
   try{const j=await idt('signUp',{email:o.email.trim(),password:o.pw,returnSecureToken:false});await W.set('users/'+j.localId,{name:o.name.trim(),email:o.email.trim().toLowerCase(),role:o.role,cargo:o.cargo.trim(),setor:o.setor||'geral',active:true,created:Date.now()});toast('Acesso criado. Envie o e-mail e a senha temporária para '+o.name.split(' ')[0]+'.')}
   catch(x){if(x.code=='EMAIL_EXISTS'){await W.set('invites/'+emk(o.email.trim()),{name:o.name.trim(),cargo:o.cargo.trim(),setor:o.setor||'geral'});try{await idt('sendOobCode',{requestType:'PASSWORD_RESET',email:o.email.trim()})}catch(z){}toast('Este e-mail já tinha login. Liberamos o acesso e enviamos um e-mail para ele definir uma nova senha.')}else{e.textContent=x.message;return false}}}});
-A.usrEdit=d=>{const u=D.users[d.u],me=d.u==ME.uid;modal(`<div class="hh"><div style="display:flex;gap:12px;align-items:center">${uav({...u,id:d.u},'m')}<div><h3>${esc(u.name)}</h3><p class="hint">${esc(u.email||'')}</p></div></div><button type="button" class="ib" data-a="mclose">${ic('x')}</button></div><div class="fg2"><label class="w">Nome<input name="name" value="${esc(u.name)}" required></label><label>Cargo<input name="cargo" value="${esc(u.cargo||'')}"></label><label>Comissão (%)<input name="comm" value="${u.comm!=null?u.comm:''}" placeholder="padrão do sistema"></label><label>Perfil<select name="role" ${me?'disabled':''}><option value="member" ${u.role!='admin'?'selected':''}>Membro</option><option value="admin" ${u.role=='admin'?'selected':''}>Administrador</option></select></label><label>Situação<select name="active" ${me?'disabled':''}><option value="1" ${u.active!==false?'selected':''}>Ativo</option><option value="0" ${u.active===false?'selected':''}>Desativado (sem acesso)</option></select></label><label class="w">Setor <span class="hint">(define onde o membro pode mexer; nos demais setores ele só visualiza)</span><select name="setor">${Object.entries(SETORES).map(([k,v])=>`<option value="${k}" ${(u.setor||'geral')==k?'selected':''}>${v}${k=='geral'?' — todas as áreas':k=='comercial'?' — CRM e clientes':' — conteúdos, design, audiovisual e validação'}</option>`).join('')}</select></label></div>
+A.usrEdit=d=>{const u=D.users[d.u],me=d.u==ME.uid;modal(`<div class="hh"><div style="display:flex;gap:12px;align-items:center">${uav({...u,id:d.u},'m')}<div><h3>${esc(u.name)}</h3><p class="hint">${esc(u.email||'')}</p></div></div><button type="button" class="ib" data-a="mclose">${ic('x')}</button></div><div class="fg2"><label class="w">Nome<input name="name" value="${esc(u.name)}" required></label><label>Cargo<input name="cargo" value="${esc(u.cargo||'')}"></label><label>Comissão (%)<input name="comm" value="${u.comm!=null?u.comm:''}" placeholder="padrão do sistema"></label><label>Perfil<select name="role" ${me?'disabled':''}><option value="member" ${u.role!='admin'?'selected':''}>Membro</option><option value="admin" ${u.role=='admin'?'selected':''}>Administrador</option></select></label><label>Situação<select name="active" ${me?'disabled':''}><option value="1" ${u.active!==false?'selected':''}>Ativo</option><option value="0" ${u.active===false?'selected':''}>Desativado (sem acesso)</option></select></label><label class="w">Setor <span class="hint">(define onde o membro pode mexer; nos demais setores ele só visualiza)</span><select name="setor">${Object.entries(SETORES).map(([k,v])=>`<option value="${k}" ${(u.setor||'geral')==k?'selected':''}>${v} — ${SETOR_DESC[k]}</option>`).join('')}</select></label></div>
  <div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="btn o sm" data-a="usrReset" data-u="${d.u}">Enviar redefinição de senha</button>${me?'':`<button type="button" class="btn d sm" data-a="usrDel" data-u="${d.u}">Remover acesso</button>`}</div><div class="act"><button type="button" class="btn o" data-a="mclose">Cancelar</button><button class="btn">Salvar</button></div>`,{submit:async f=>{const o=form2(f),upd={name:o.name.trim(),cargo:o.cargo.trim(),setor:o.setor||'geral',comm:o.comm===''?null:num(o.comm)};if(!me){upd.role=o.role;upd.active=o.active=='1'}await W.patch('users/'+d.u,upd);toast('Membro atualizado.');if(me){ME={...ME,...upd};shell();route()}}})};
 A.usrReset=async d=>{try{await idt('sendOobCode',{requestType:'PASSWORD_RESET',email:D.users[d.u].email});toast('E-mail de redefinição enviado.')}catch(x){toast(x.message,1)}};
 A.usrDel=async d=>{const u=D.users[d.u];if(!await ask('Remover o acesso de '+u.name+'? Ele não conseguirá mais entrar. (Para apagar o login definitivamente, exclua o usuário também no console do Firebase.)','Remover acesso',1))return;await W.del('users/'+d.u);closeModal();toast('Acesso removido.')};
@@ -1487,6 +1604,154 @@ const drCfg=()=>{const o=form2($('#df'));o.url=o.url.trim();o.root=o.root.trim()
 A.drSave=async()=>{const o=drCfg(),m=$('#drm');if(o.url&&!/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec/.test(o.url)){m.style.color='var(--rd)';m.textContent='O endereço deve começar com https://script.google.com/macros/s/ e terminar em /exec.';return}await W.set('config/drive',o);m.style.color='var(--gn)';m.textContent='Configurações salvas.'};
 A.drTest=async()=>{const o=drCfg(),m=$('#drm');m.style.color='';m.textContent='Testando…';try{const t=await tok();const r=await fetch(o.url,{method:'POST',body:JSON.stringify({token:t,ping:true})});const j=await r.json();if(!j.ok)throw new Error(j.error||'ERRO');m.style.color='var(--gn)';m.textContent='Conexão com o Drive funcionando'+(j.root?' (pasta “'+j.root+'”)':'')+'.'}catch(x){m.style.color='var(--rd)';m.textContent='Não foi possível conectar ('+x.message+'). Confira a implantação do Apps Script (acesso: Qualquer pessoa) e o endereço.'}};
 A.backup=async()=>{const o={_export:new Date().toISOString()};for(const k of['users','clients','contents','crm','comm','tgoals','config','approvals','meta']){o[k]=await api('GET',k).catch(()=>null)}dlFile('blueprint-backup-'+TODAY()+'.json',JSON.stringify(o,null,1),'application/json');toast('Backup baixado.')};
+
+/* ===================== INÍCIO simplificado (social media · designer · videomaker) ===================== */
+function homeLite(){
+ const now=new Date(),wd=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'][now.getDay()];
+ const wip=Q.cts().filter(c=>!['agendado','aprcli'].includes(c.stage)&&c.stage!='entrega');
+ const dueOf=c=>c.board=='conteudo'?c.date:c.due;
+ const mine=wip.filter(c=>[c.resp,c.designer,c.editor].includes(ME.uid)).sort((a,b)=>(dueOf(a)||'9')>(dueOf(b)||'9')?1:-1);
+ const late=wip.filter(Q.isLate).sort((a,b)=>(dueOf(a)||'9')>(dueOf(b)||'9')?1:-1);
+ const wk=wip.filter(c=>{const d=dueOf(c);return d&&d>=TODAY()&&d<=addD(TODAY(),7)});
+ const li=c=>`<li data-a="goK" data-i="${c.id}">${dtBox(dueOf(c),Q.isLate(c))}<div style="min-width:0"><b style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(c.title)}</b><small>${esc(cname(c.client))} · ${esc(stOf(c.board,c.stage).n)}</small></div></li>`;
+ const b0=myBoards()[0],stg=stages(b0).map(s=>({n:s.n,v:wip.filter(c=>c.board==b0&&c.stage==s.id).length,c:s.c}));
+ const area=b0=='conteudo'?'Conteúdos':BOARDS[b0].n;
+ const todo=mine.filter(c=>dueOf(c)&&dueOf(c)<=TODAY()).length;
+ return `<div class="hero"><div><div class="eb">Blueprint · Início</div><h1>${brHello()}, <i>${esc(ME.name.split(' ')[0])}.</i></h1><p>${wd}, ${now.getDate()} de ${MES[now.getMonth()].toLowerCase()} · ${todo?`você tem <b>${todo}</b> ${todo==1?'item':'itens'} para hoje ou atrasados`:'nada urgente para você hoje'}.</p></div></div>
+ <div class="kp">
+  <div class="k hl" style="animation-delay:.05s"><small>${esc(area)} em produção</small><b>${wip.length}</b><span>itens abertos na sua área</span></div>
+  <div class="k" style="animation-delay:.1s"><small>Minha fila</small><b>${mine.length}</b><span>${mine.length?'atribuídos a você':'nada atribuído a você'}</span></div>
+  <div class="k" style="animation-delay:.15s"><small>Próximos 7 dias</small><b>${wk.length}</b><span>com prazo na semana</span></div>
+  <div class="k" style="animation-delay:.2s"><small>Em atraso</small><b>${late.length}</b><span>${late.length?`<b style="color:var(--rd)">pedem atenção</b>`:'tudo no prazo'}</span></div>
+ </div>
+ <div class="gr g3" style="margin-bottom:14px">
+  <div class="pn" style="animation-delay:.1s"><div class="hd"><div><h3>Minha fila</h3><p class="sub">O que está atribuído a você, por prazo.</p></div><a href="/criativos" data-l>Abrir</a></div><ul class="ul">${(mine.length?mine:wip.sort((a,b)=>(dueOf(a)||'9')>(dueOf(b)||'9')?1:-1)).slice(0,6).map(li).join('')||'<li class="emp" style="display:block;cursor:default">Nada na fila agora.</li>'}</ul></div>
+  <div class="pn" style="animation-delay:.15s"><h3>Em atraso</h3><p class="sub">Prazos vencidos.</p><ul class="ul">${late.slice(0,6).map(li).join('')||'<li class="emp" style="display:block;cursor:default">Nenhum atraso. Excelente!</li>'}</ul></div>
+  <div class="pn" style="animation-delay:.2s"><h3>Por etapa</h3><p class="sub">Onde estão os itens de ${esc(area.toLowerCase())}.</p>${wip.length?hbars(stg):empty('Nada em andamento.')}</div>
+ </div>`}
+
+/* ===================== CARTEIRO · agendamento e publicação no Instagram ===================== */
+const CT={cl:'',st:''};
+const PST={rascunho:['Rascunho','nu'],agendado:['Agendado','wn'],publicado:['Publicado','on'],falhou:['Falhou','of'],cancelado:['Cancelado','nu']};
+const DSEM=['dom','seg','ter','qua','qui','sex','sáb'];
+const ctCfg=()=>(D.config&&D.config.carteiro)||{};
+const ctSrv=()=>!!(ctCfg().api&&ctCfg().appId);
+const igOf=c=>(D.carteiro&&D.carteiro.ig&&D.carteiro.ig[c])||null;
+const igSt=c=>{const g=igOf(c);if(!g||g.status!='on')return {k:'off',t:'Não conectado',on:0};if(g.exp&&g.exp<Date.now())return {k:'of',t:'Conexão expirou',on:0};const d=g.exp?Math.ceil((g.exp-Date.now())/864e5):null;return d!=null&&d<=7?{k:'wn',t:'Expira em '+d+' d',on:1}:{k:'on',t:'Conectado',on:1}};
+const ctPosts=()=>L(D.carteiro&&D.carteiro.posts);
+const ctVid=t=>t=='reels';
+const ctBadge=t=>`<span class="kt ${ctVid(t)?'v':'p'}">${ic(ctVid(t)?'video':'photo')}${esc(TYPES[t||'feed'])}</span>`;
+const ctDay=s=>{const n=dd(s),d=pd(s);return (n==0?'Hoje':n==1?'Amanhã':n==-1?'Ontem':DSEM[d.getDay()].replace(/^./,x=>x.toUpperCase()))+' · '+d.getDate()+' de '+MES[d.getMonth()].toLowerCase()};
+const ctAt=(date,time)=>{const d=pd(date);if(!d||!time)return 0;const [h,m]=time.split(':').map(Number);d.setHours(h||0,m||0,0,0);return d.getTime()};
+const ctAv=(cid,sz)=>{const n=cname(cid);return `<span class="cta" style="--c:${ccolor(cid)};${sz?`width:${sz}px;height:${sz}px`:''}">${esc(ini(n))}</span>`};
+
+PAGES.carteiro={t:'Carteiro',r(){
+ const can=canPost(),cl=L(D.clients).filter(c=>(c.status||'ativo')!='encerrado').sort((a,b)=>a.name>b.name?1:-1);
+ const ps=ctPosts(),sel=CT.cl&&D.clients[CT.cl]?CT.cl:'';
+ const byCl=ps.filter(p=>!sel||p.client==sel);
+ const cnt=k=>byCl.filter(p=>p.status==k).length;
+ const now=Date.now(),wk=now+7*864e5,mm=ym(new Date());
+ const next=ps.filter(p=>p.status=='agendado'&&p.at<=wk).length;
+ const pubM=ps.filter(p=>p.status=='publicado'&&(p.pubAt?ymd(new Date(p.pubAt)).slice(0,7):(p.date||'').slice(0,7))==mm).length;
+ const late=ps.filter(p=>p.status=='agendado'&&p.at<now-6e4&&p.mode!='auto').length;
+ const attn=ps.filter(p=>p.status=='falhou').length+late+cl.filter(c=>{const s=igSt(c.id);return igOf(c.id)&&(s.k=='of'||s.k=='wn')}).length;
+ const conn=cl.filter(c=>igSt(c.id).on).length;
+ const list=byCl.filter(p=>!CT.st||p.status==CT.st).filter(p=>p.status!='cancelado'||CT.st=='cancelado').sort((a,b)=>(a.at||0)-(b.at||0));
+ const up=list.filter(p=>p.status=='agendado'||p.status=='rascunho'||p.status=='falhou'),done=list.filter(p=>p.status=='publicado'||p.status=='cancelado').sort((a,b)=>(b.at||0)-(a.at||0));
+ const ready=Q.cts().filter(c=>c.board=='conteudo'&&c.stage=='aprcli'&&(!sel||c.client==sel)&&!ps.some(p=>p.content==c.id&&p.status!='cancelado'));
+ const group=a=>{const g={};a.forEach(p=>{(g[p.date||'—']=g[p.date||'—']||[]).push(p)});return Object.keys(g).map(d=>`<div class="ctd"><div class="ctdh"><b>${esc(d=='—'?'Sem data':ctDay(d))}</b><span>${g[d].length}</span></div>${g[d].map(ctRow).join('')}</div>`).join('')};
+ const chips=[['','Todos',byCl.filter(p=>p.status!='cancelado').length],['agendado','Agendados',cnt('agendado')],['publicado','Publicados',cnt('publicado')],['falhou','Falhas',cnt('falhou')],['rascunho','Rascunhos',cnt('rascunho')]];
+ const banner=ctSrv()?'':`<div class="ctb"><div class="ctbi">${ic('mail')}</div><div><b>Publicação automática ainda não está ativa</b><p>Você já pode montar a fila, agendar e marcar como publicado. Para o Carteiro publicar sozinho no Instagram dos clientes, falta ligar o servidor do Carteiro.</p></div>${isAdm()?`<button class="btn y" data-a="ctSetup">Ativar integração</button>`:`<small>Peça a um administrador</small>`}</div>`;
+ return ph('Carteiro','Agende e publique os conteúdos aprovados direto no Instagram dos clientes.',`${isAdm()?`<button class="btn o" data-a="ctSetup">${ic('gear')}Integração</button>`:''}${can?`<button class="btn" data-a="ctNew">${ic('plus')}Novo agendamento</button>`:''}`)+banner+
+ `<div class="kp">
+  <div class="k hl"><small>Agendados · 7 dias</small><b>${next}</b><span>${ps.filter(p=>p.status=='agendado').length} no total</span></div>
+  <div class="k"><small>Publicados no mês</small><b>${pubM}</b><span>${MES[new Date().getMonth()].toLowerCase()}</span></div>
+  <div class="k"><small>Pedem atenção</small><b style="${attn?'color:var(--rd)':''}">${attn}</b><span>${attn?'falhas, atrasos ou contas expirando':'tudo certo'}</span></div>
+  <div class="k"><small>Contas conectadas</small><b>${conn}<em style="font:600 .95rem var(--body);color:var(--mu);font-style:normal"> / ${cl.length}</em></b><span>${cl.length-conn} sem conexão</span></div>
+ </div>
+ <div class="ctw"><aside class="pn ctl"><div class="hd"><div><h3>Clientes</h3><p class="sub">Escolha uma conta para filtrar a agenda.</p></div></div>
+  <button type="button" class="cte${sel?'':' on'}" data-a="ctSel" data-c=""><span class="cta all">${ic('users')}</span><span class="ctn"><b>Todos os clientes</b><small>${ps.filter(p=>p.status=='agendado').length} agendados</small></span></button>
+  ${cl.map(c=>{const g=igOf(c.id),s=igSt(c.id),n=ps.filter(p=>p.client==c.id&&p.status=='agendado').length;return `<div class="cte${sel==c.id?' on':''}" data-a="ctSel" data-c="${c.id}" tabindex="0" role="button">${ctAv(c.id)}<span class="ctn"><b>${esc(c.name)}</b><small>${g&&g.user?esc(g.user):'<i>sem @usuário</i>'}${n?` · ${n} agendado${n>1?'s':''}`:''}</small></span><span class="ctp ${s.k}" title="${esc(s.t)}"><i></i>${s.k=='wn'?s.t:s.on?'Conectado':s.k=='of'?'Expirou':'Conectar'}</span></div>`}).join('')||empty('Cadastre clientes para começar.')}
+ </aside>
+ <section class="ctr">
+  ${sel?`<div class="pn cth">${ctAv(sel,44)}<div style="flex:1;min-width:0"><h3>${esc(cname(sel))}</h3><p class="sub">${igOf(sel)&&igOf(sel).user?esc(igOf(sel).user)+' · ':''}${esc(igSt(sel).t)}${igOf(sel)&&igOf(sel).at?' desde '+fdl(ymd(new Date(igOf(sel).at))):''}</p></div>${can?`<button class="btn ${igSt(sel).on?'o':''} sm" data-a="ctAcc" data-c="${sel}">${ic('ig')}${igSt(sel).on?'Gerenciar conta':'Conectar Instagram'}</button>`:''}</div>`:''}
+  <div class="pn"><div class="hd"><div><h3>Prontos para agendar</h3><p class="sub">Conteúdos aprovados pelo cliente que ainda não têm data de publicação.</p></div><span class="tg">${ready.length}</span></div>
+   ${ready.length?`<div class="ctrd">${ready.slice(0,8).map(c=>`<article class="ctc" style="--c:${ccolor(c.client)}"><div><b>${esc(c.title)}</b><small>${esc(cname(c.client))}</small></div><div class="ctm">${ctBadge(c.type)}${c.date?`<span>${ic('cal')} ${fd(c.date)}</span>`:''}</div><p>${esc((c.caption||'Sem legenda ainda.').slice(0,110))}</p>${can?`<button class="btn sm" data-a="ctFrom" data-i="${c.id}">${ic('send')}Agendar</button>`:''}</article>`).join('')}</div>`:empty('Nada aguardando. Quando o cliente aprovar um conteúdo na Validação, ele aparece aqui.')}
+  </div>
+  <div class="pn"><div class="hd"><div><h3>Agenda de publicações</h3><p class="sub">Em ordem de data e hora.</p></div><div class="chips">${chips.map(c=>`<button type="button" class="${CT.st==c[0]?'on':''}" data-a="ctSt" data-s="${c[0]}">${c[1]} ${c[2]}</button>`).join('')}</div></div>
+   ${up.length?group(up):empty(CT.st?'Nenhum item neste filtro.':'Nenhum agendamento ainda. Use “Novo agendamento” ou escolha um conteúdo pronto acima.')}
+   ${done.length&&!CT.st||CT.st=='publicado'||CT.st=='cancelado'?`${(CT.st?'':done.length)?`<div class="ctdone"><b>Histórico</b></div>`:''}${group(done.slice(0,CT.st?200:8))}`:''}
+  </div></section></div>`}};
+
+function ctRow(p){
+ const s=PST[p.status]||PST.rascunho,g=igOf(p.client),can=canPost(),late=p.status=='agendado'&&p.at<Date.now()-6e4;
+ return `<div class="ctrw ${p.status}" data-id="${p.id}"><div class="ctt"><b>${esc(p.time||'—')}</b></div><span class="ctbar" style="background:${ccolor(p.client)}"></span><div class="ctx"><div class="ctl1"><b>${esc(p.title||'Sem título')}</b>${ctBadge(p.type)}</div><small>${esc(cname(p.client))}${g&&g.user?' · '+esc(g.user):''} · ${p.mode=='auto'?'publica sozinho':'publicação manual'}${p.cap?'':''}</small>${p.status=='falhou'&&p.err?`<div class="cter">${esc(String(p.err).slice(0,160))}</div>`:''}${late&&p.mode!='auto'?`<div class="cter wn">Passou do horário — publique e marque como publicado.</div>`:''}${p.status=='publicado'&&p.link?`<a class="ctlk" href="${esc(p.link)}" target="_blank" rel="noopener">Ver no Instagram ↗</a>`:''}</div><div class="cts">${stBadge(late&&p.mode!='auto'?'Atrasado':s[0],late&&p.mode!='auto'?'of':s[1])}</div>${can?`<div class="cta2">${p.status=='agendado'||p.status=='falhou'?(p.mode=='auto'?`<button class="btn o sm" data-a="ctNow" data-i="${p.id}" title="Sai em até 1 minuto">${p.status=='falhou'?'Tentar de novo':'Publicar agora'}</button>`:`<button class="btn o sm" data-a="ctDone" data-i="${p.id}">${ic('check')}Marcar publicado</button>`):''}<button class="ib" data-a="ctEdit" data-i="${p.id}" aria-label="Editar" title="Editar">${ic('pen')}</button></div>`:''}</div>`}
+
+A.ctSel=d=>{CT.cl=d.c||'';draw(false)};
+A.ctSt=d=>{CT.st=d.s||'';draw(false)};
+
+function ctModal(p){
+ const isNew=!p.id,cl=L(D.clients).filter(c=>(c.status||'ativo')!='encerrado'||c.id==p.client).sort((a,b)=>a.name>b.name?1:-1);
+ const cid=p.client||CT.cl||'';
+ modal(`<div class="hh"><div><h3>${isNew?'Novo agendamento':'Editar agendamento'}</h3><p class="hint">${p.content?'Vinculado ao conteúdo “'+esc(p.title||'')+'”.':'Monte a postagem e escolha quando ela sai.'}</p></div><button type="button" class="ib" data-a="mclose" aria-label="Fechar">${ic('x')}</button></div>
+ <div class="fg2"><label>Cliente<select name="client" required data-c="ctCli"><option value="">Selecione…</option>${cl.map(c=>`<option value="${c.id}" ${cid==c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select></label>
+ <label>Formato<select name="type">${Object.entries(TYPES).map(([k,v])=>`<option value="${k}" ${(p.type||'feed')==k?'selected':''}>${v}</option>`).join('')}</select></label>
+ <label class="w">Título interno<input name="title" required value="${esc(p.title||'')}" placeholder="Ex.: Post de lançamento da coleção"></label>
+ <label class="w">Legenda<textarea name="cap" id="ctcap" maxlength="2200" style="min-height:130px" data-in="ctCap" placeholder="Legenda completa com hashtags.">${esc(p.cap||'')}</textarea><span class="hint" id="ctcc">${(p.cap||'').length} / 2200</span></label>
+ <label class="w">Arquivos (links diretos, um por linha)<textarea name="media" style="min-height:70px" placeholder="https://… (imagem JPEG ou vídeo). Carrossel: até 10 links.">${esc((p.media||[]).join('\n'))}</textarea><span class="hint">O Instagram busca o arquivo por um link público no momento de publicar. Para Reels, use vídeo vertical (9:16).</span></label>
+ <label>Data<input type="date" name="date" value="${esc(p.date||addD(TODAY(),1))}" required></label><label>Hora<input type="time" name="time" value="${esc(p.time||'10:00')}" required></label>
+ <div class="w ctmode" id="ctmode"></div></div>
+ <div class="act" style="justify-content:space-between">${!isNew?`<button type="button" class="btn d" data-a="ctDel" data-i="${p.id}">Excluir</button>`:'<span></span>'}<span style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="btn o" data-a="mclose">Cancelar</button><button type="button" class="btn o" data-a="ctSave" data-s="rascunho">Salvar rascunho</button><button type="button" class="btn" data-a="ctSave" data-s="agendado">${ic('send')}Agendar</button></span></div>`,{sticky:1,submit:async()=>false,init:m=>{m.__p=p;ctMode(m)}})}
+function ctMode(m){
+ const f=m.querySelector('form'),p=m.__p||{},c=f.client.value,s=igSt(c),box=m.querySelector('#ctmode');
+ const autoOk=ctSrv()&&s.on;const ck=f.querySelector('[name=mode]:checked'),cur=m.__t&&ck?ck.value:(p.id?(p.mode=='auto'&&autoOk?'auto':'manual'):(autoOk?'auto':'manual'));
+ box.innerHTML=`<div class="sec">Como publicar</div><label class="ctopt ${autoOk?'':'dis'}"><input type="radio" name="mode" data-c="ctPick" value="auto" ${cur=='auto'&&autoOk?'checked':''} ${autoOk?'':'disabled'}><span><b>Publicar automaticamente</b><small>${autoOk?'O Carteiro publica na data e hora marcadas, mesmo com o sistema fechado.':!ctSrv()?'Disponível quando a integração do Carteiro for ativada.':!c?'Escolha o cliente.':'Conecte o Instagram deste cliente para liberar.'}</small></span></label><label class="ctopt"><input type="radio" name="mode" data-c="ctPick" value="manual" ${cur=='manual'||!autoOk?'checked':''}><span><b>Só me lembrar</b><small>Fica na agenda e você publica manualmente, depois marca como publicado.</small></span></label>`}
+A.ctPick=(d,e)=>{const m=e.target.closest('.md');if(m)m.__t=1};
+A.ctCli=(d,e)=>{const m=e.target.closest('.md');if(m)ctMode(m)};
+A.ctCap=(d,e)=>{const x=$('#ctcc');if(x)x.textContent=e.target.value.length+' / 2200'};
+A.ctNew=()=>{if(!canPost())return;ctModal({client:CT.cl||''})};
+A.ctEdit=d=>{const p=ctPosts().find(x=>x.id==d.i);if(p&&canPost())ctModal(p)};
+A.ctFrom=d=>{const c=D.contents[d.i];if(!c||!canPost())return;ctModal({client:c.client,title:c.title,type:c.type,cap:c.caption||'',content:d.i,date:c.date&&c.date>=TODAY()?c.date:addD(TODAY(),1)})};
+A.ctSave=async(d,e)=>{
+ const m=e.target.closest('.md'),f=m.querySelector('form'),o=form2(f),p=m.__p||{},stt=d.s;
+ if(!o.client||!o.title.trim()){toast('Escolha o cliente e dê um título.',1);return}
+ const media=(o.media||'').split('\n').map(x=>x.trim()).filter(Boolean);
+ const at=ctAt(o.date,o.time);
+ if(stt=='agendado'){if(!at){toast('Defina data e hora.',1);return}
+  if(o.mode=='auto'&&at<Date.now()+2*6e4){toast('Para publicar automaticamente, escolha um horário no futuro.',1);return}
+  if(o.mode=='auto'&&!media.length){toast('Adicione ao menos um link de arquivo para publicar automaticamente.',1);return}
+  if(o.type=='carrossel'&&o.mode=='auto'&&(media.length<2||media.length>10)){toast('Carrossel precisa de 2 a 10 arquivos.',1);return}}
+ const pid=p.id||id();
+ const rec={...p,id:undefined,client:o.client,type:o.type,title:o.title.trim(),cap:o.cap||'',media,date:o.date,time:o.time,at,mode:o.mode||'manual',status:stt,err:null,...(p.id?{}:{created:Date.now(),by:ME.uid})};
+ delete rec.id;if(!rec.content)delete rec.content;
+ closeModal(true);
+ await W.set('carteiro/posts/'+pid,rec);
+ if(p.content&&stt=='agendado'){const c=D.contents[p.content];if(c&&c.stage=='aprcli'&&canBoard('conteudo')){await W.patch('contents/'+p.content,{stage:'agendado'});await hist(p.content,'Agendado no Carteiro · '+fdl(o.date)+' às '+o.time,'m')}}
+ toast(stt=='agendado'?'Agendado para '+fd(o.date)+' às '+o.time+'.':'Rascunho salvo.')};
+A.ctDone=async d=>{const p=ctPosts().find(x=>x.id==d.i);if(!p)return;
+ modal(`<div class="hh"><h3>Marcar como publicado</h3><button type="button" class="ib" data-a="mclose">${ic('x')}</button></div><p class="hint" style="margin:0 0 10px">${esc(p.title)} · ${esc(cname(p.client))}</p><label>Link do post <span class="hint">(opcional)</span><input name="link" placeholder="https://www.instagram.com/p/…"></label><div class="act"><button type="button" class="btn o" data-a="mclose">Cancelar</button><button class="btn">${ic('check')}Confirmar</button></div>`,{submit:async f=>{const o=form2(f);await W.patch('carteiro/posts/'+p.id,{status:'publicado',pubAt:Date.now(),link:o.link.trim()||null,err:null});toast('Marcado como publicado.')}})};
+A.ctNow=async d=>{const p=ctPosts().find(x=>x.id==d.i);if(!p)return;if(!await ask('Publicar agora? O Carteiro envia em até 1 minuto.','Publicar'))return;await W.patch('carteiro/posts/'+p.id,{status:'agendado',at:Date.now(),err:null});toast('Na fila. Sai em instantes.')};
+A.ctDel=async d=>{const p=ctPosts().find(x=>x.id==d.i);if(!p)return;if(!await ask('Excluir este agendamento? Se ainda não foi publicado, ele não será postado.','Excluir',1))return;closeModal(true);await W.del('carteiro/posts/'+p.id);if(p.content){const c=D.contents[p.content];if(c&&c.stage=='agendado'&&canBoard('conteudo'))await W.patch('contents/'+p.content,{stage:'aprcli'})}toast('Agendamento excluído.')};
+
+/* ---- conta do cliente ---- */
+A.ctConn=d=>A.ctAcc(d);
+A.ctAcc=d=>{if(!canPost())return;const cid=d.c,g=igOf(cid)||{},s=igSt(cid);
+ modal(`<div class="hh"><div style="display:flex;gap:12px;align-items:center">${ctAv(cid,44)}<div><h3>${esc(cname(cid))}</h3><p class="hint">Conta do Instagram</p></div></div><button type="button" class="ib" data-a="mclose">${ic('x')}</button></div>
+ <div class="ctst ${s.k}"><i></i><div><b>${esc(s.t)}</b><small>${s.on&&g.user?esc(g.user)+(g.exp?' · renovar até '+fdl(ymd(new Date(g.exp))):''):'O cliente autoriza o Blueprint uma única vez, direto no Instagram. A senha nunca passa por aqui.'}</small></div></div>
+ <label>@ do perfil <span class="hint">(só para identificar na agenda)</span><input name="user" value="${esc(g.user||'')}" placeholder="@perfildocliente"></label>
+ <div class="ctnote"><b>Antes de conectar</b><ul><li>O Instagram do cliente precisa ser <b>conta profissional</b> (comercial ou criador).</li><li>Quem conecta precisa estar logado nessa conta no navegador.</li><li>${ctSrv()?'A conexão leva menos de um minuto e dura cerca de 60 dias, depois é renovada.':'A integração do Carteiro ainda não está ativa. Peça a um administrador para ativá-la.'}</li></ul></div>
+ <div class="act" style="justify-content:space-between">${g.status=='on'?`<button type="button" class="btn d" data-a="ctDisc" data-c="${cid}">Desconectar</button>`:'<span></span>'}<span style="display:flex;gap:8px"><button type="button" class="btn o" data-a="mclose">Fechar</button><button type="submit" class="btn o">Salvar @</button><button type="button" class="btn" data-a="ctGo" data-c="${cid}" ${ctSrv()?'':'disabled'}>${ic('ig')}${s.on?'Reconectar':'Conectar Instagram'}</button></span></div>`,{submit:async f=>{const o=form2(f);let u=o.user.trim();if(u&&u[0]!='@')u='@'+u;await W.patch('carteiro/ig/'+cid,{user:u||null});toast('Salvo.')}})};
+A.ctGo=d=>{const c=ctCfg();if(!ctSrv()){toast('Ative a integração do Carteiro primeiro.',1);return}
+ const u=c.api.replace(/\/+$/,'')+'/connect?client='+encodeURIComponent(d.c)+'&t='+encodeURIComponent(S.tok||'');
+ window.open(u,'_blank','noopener');toast('Conclua a autorização na janela aberta. Esta tela atualiza sozinha.')};
+A.ctDisc=async d=>{if(!await ask('Desconectar o Instagram deste cliente? Os agendamentos automáticos dele deixam de publicar.','Desconectar',1))return;closeModal(true);await W.patch('carteiro/ig/'+d.c,{status:'off',exp:null});toast('Conta desconectada.')};
+
+/* ---- integração (administrador) ---- */
+A.ctSetup=()=>{if(!isAdm())return;const c=ctCfg();
+ modal(`<div class="hh"><div><h3>Integração com o Instagram</h3><p class="hint">Liga o Carteiro ao servidor que publica por você.</p></div><button type="button" class="ib" data-a="mclose">${ic('x')}</button></div>
+ <div class="ctnote" style="margin-top:0"><b>Como funciona</b><ol><li>Você cria um app na Meta (developers.facebook.com) com o produto <b>Instagram</b> e copia o <b>ID do app</b>.</li><li>Publica o servidor do Carteiro (pasta <b>carteiro-servidor</b>, enviada junto com o Blueprint) no Firebase.</li><li>Cola abaixo o ID do app e o endereço do servidor. Pronto: o botão <b>Conectar Instagram</b> de cada cliente passa a funcionar.</li></ol><small>Para publicar em contas de clientes, a Meta exige a análise do app. Até lá, só contas ligadas ao seu próprio app funcionam.</small></div>
+ <div class="fg2"><label class="w">ID do app da Meta<input name="appId" value="${esc(c.appId||'')}" placeholder="1234567890"></label><label class="w">Endereço do servidor do Carteiro<input name="api" value="${esc(c.api||'')}" placeholder="https://us-central1-SEU-PROJETO.cloudfunctions.net/carteiro"></label></div>
+ <div class="act"><button type="button" class="btn o" data-a="mclose">Cancelar</button><button class="btn">Salvar</button></div>`,{submit:async f=>{const o=form2(f);await W.patch('config/carteiro',{appId:o.appId.trim()||null,api:o.api.trim()||null});toast(o.appId.trim()&&o.api.trim()?'Integração ativada.':'Integração desativada.')}})};
 
 /* ===================== página pública de aprovação (sem login) ===================== */
 let PUB=null;const REC={mr:null,st:null,chunks:[],cid:null,data:'',timer:null,t0:0};
