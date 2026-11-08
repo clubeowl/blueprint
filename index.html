@@ -1332,7 +1332,7 @@ html[data-theme=night]{--k-ffffff:#0f2144;--k-fffeeb:#4e4a0e;--k-e3f4ea:#264834;
 #spl,#prt,.pvx,#tv,html[data-theme=night] #spl,html[data-theme=night] #prt,html[data-theme=night] .pvx,html[data-theme=night] #tv{--k-ffffff:#ffffff;--k-fffeeb:#fffeeb;--k-e3f4ea:#e3f4ea;--k-fde3e1:#fde3e1;--k-fff0d6:#fff0d6;--k-e9ecf1:#e9ecf1;--k-f5f8fd:#f5f8fd;--k-edf1f9:#edf1f9;--k-f6f9fe:#f6f9fe;--k-e3eaf7:#e3eaf7;--k-e6edf9:#e6edf9;--k-d5e2fa:#d5e2fa;--k-c3cde0:#c3cde0;--k-e4eaf5:#e4eaf5;--k-f8fafe:#f8fafe;--k-e5ecf8:#e5ecf8;--k-fafcff:#fafcff;--k-fff7d6:#fff7d6;--k-dbdbdb:#dbdbdb;--k-efefef:#efefef;--k-fafafa:#fafafa;--k-fafaf6:#fafaf6;--k-f3f4ef:#f3f4ef;--k-f1f2ec:#f1f2ec;--k-e9ebe3:#e9ebe3;--k-f1f3f8:#f1f3f8;--k-fdf3f2:#fdf3f2;--k-f6cfcb:#f6cfcb;--k-f6f9ff:#f6f9ff;--k-fff4f3:#fff4f3;--k-f5f8fe:#f5f8fe;--k-e0f5ec:#e0f5ec;--k-fde7e5:#fde7e5;--k-fff1d6:#fff1d6;--k-e8eef9:#e8eef9;--k-f1f6ff:#f1f6ff;--k-eaf1fd:#eaf1fd;--k-e3ebf8:#e3ebf8;--k-f4f8ff:#f4f8ff;--k-edf2fb:#edf2fb;--k-e6edf8:#e6edf8;--k-e8effb:#e8effb;--k-e3eaf6:#e3eaf6;--k-e8eef8:#e8eef8;--k-cdd6e8:#cdd6e8;--k-eaf2ff:#eaf2ff;--k-b9cff6:#b9cff6;--k-fff5f4:#fff5f4;--k-fdeee6:#fdeee6;--k-ece9fb:#ece9fb;--k-f3f7ff:#f3f7ff;--k-fff6f1:#fff6f1;--k-f6f4ff:#f6f4ff;--k-fff8dc:#fff8dc;--k-fffbe9:#fffbe9;--k-cfe0fd:#cfe0fd;--k-eef2fa:#eef2fa;--k-fdeceb:#fdeceb;--k-fff3d9:#fff3d9;--k-e6f6ee:#e6f6ee;--k-fff4dc:#fff4dc;--k-dbe7fb:#dbe7fb;--k-e3edff:#e3edff;--k-fff7a6:#fff7a6;--k-fffdea:#fffdea;--k-cfdcf5:#cfdcf5;--k-c4d6f7:#c4d6f7;--k-e3e8f0:#e3e8f0;--k-e9f0ff:#e9f0ff;--k-fff9a8:#fff9a8;--k-cfd9ee:#cfd9ee;--k-e5edfb:#e5edfb;--k-ffc39a:#ffc39a;--k-b9cdf5:#b9cdf5;--k-fff6dd:#fff6dd;--k-fff0c2:#fff0c2;--k-dfe9ff:#dfe9ff;--k-f5f8ff:#f5f8ff;--k-d5deee:#d5deee;--k-eef4ff:#eef4ff;--k-8a5a00:#8a5a00;--k-000000:#000000;--k-262626:#262626;--k-16233b:#16233b;--k-0f2a5c:#0f2a5c;--k-34425a:#34425a;--k-10244a:#10244a;--k-0b1d40:#0b1d40;--k-0f7a50:#0f7a50;--k-b3261e:#b3261e;--k-47608f:#47608f;--k-1a3a78:#1a3a78;--k-c24d1c:#c24d1c;--k-6b5b12:#6b5b12;--k-6b5b00:#6b5b00;--k-071327:#071327;--k-3b1b05:#3b1b05;--k-0a8a3c:#0a8a3c;--k-5b6b85:#5b6b85;--kt-8a5a00:#8a5a00;--kt-000000:#000000;--kt-262626:#262626;--kt-16233b:#16233b;--kt-0f2a5c:#0f2a5c;--kt-34425a:#34425a;--kt-10244a:#10244a;--kt-0b1d40:#0b1d40;--kt-0f7a50:#0f7a50;--kt-b3261e:#b3261e;--kt-47608f:#47608f;--kt-1a3a78:#1a3a78;--kt-c24d1c:#c24d1c;--kt-6b5b12:#6b5b12;--kt-6b5b00:#6b5b00;--kt-071327:#071327;--kt-3b1b05:#3b1b05;--kt-0a8a3c:#0a8a3c;--kt-5b6b85:#5b6b85;}
 </style></head><body><div id="app"></div><div id="prt"></div>
 <script>
-const BUILD="08/11 02h26",BP_VER="1.0";
+const BUILD="08/11 03h00",BP_VER="1.0";
 'use strict';
 /* ===================== Blueprint · núcleo ===================== */
 const FB={apiKey:'AIzaSyAKt9bzn2tyCfIkllZ6l4I_VB_M4ky5fIU',db:'https://owl-crm-2026-default-rtdb.firebaseio.com'};
@@ -2345,7 +2345,7 @@ async function imRead(f){const buf=await f.arrayBuffer(),nm=f.name,u8=new Uint8A
  return await imLib(buf)}
 /* ---------- reconhecimento de colunas ---------- */
 const imScore=(h,p)=>{if(!h)return 0;if(h==p)return 100;if((' '+h+' ').includes(' '+p+' '))return 50+p.length-Math.max(0,(h.split(' ').length-p.split(' ').length)*2);if(p.length>=6&&h.includes(p))return 30;return 0};
-function imBest(h){let best=['',0];if(!h)return best;for(const f of IMF){let s=0;for(const p of f[2])s=Math.max(s,imScore(h,p));if(f[0]=='name'&&h=='nome')s=45;if(s>best[1])best=[f[0],s]}return best}
+function imBest(h){let best=['',0];if(!h||/cadastral|abertura|cnae|natureza juridica|capital social|quadro societ|optante|receita federal|nascimento|fundacao|validade|vencimento/.test(h))return best;for(const f of IMF){let s=0;for(const p of f[2])s=Math.max(s,imScore(h,p));if(f[0]=='name'&&h=='nome')s=45;if(s>best[1])best=[f[0],s]}return best}
 const imEmailRx=/[\w.+-]+@[\w-]+(\.[\w-]+)+/,imMoneyRx=/^(r\$\s*)?-?\d[\d.,]*\s*(k|mil|reais)?$/i;
 function imHeaderRow(rows){let best=-1,bs=0;const lim=Math.min(rows.length,30);
  for(let i=0;i<lim;i++){const r=rows[i]||[],cells=r.map(x=>String(x==null?'':x).trim()).filter(Boolean);if(cells.length<2)continue;let s=0;for(const c of cells){const h=nzs(c);if(!h)continue;if(imBest(h)[1]>=45)s+=3;else if(!/^[\d\s.,R$%-]+$/.test(c)&&!imEmailRx.test(c)&&c.length<40)s+=.4}
@@ -2361,7 +2361,7 @@ function imAutoMap(tb){const rows=tb.rows,hr=tb.hr,hd=hr>=0?(rows[hr]||[]):[],n=
   if(!f){const g=imColInfer(data.map(r=>r[c]));if(g){f=g;s=35}}
   map[c]=f;sc[c]=s}
  /* campo repetido: fica a coluna de maior pontuação, as outras viram observação (com o título da coluna) */
- const by={};for(let c=0;c<n;c++){const f=map[c];if(!f||f.startsWith('x_'))continue;if(!by[f]||sc[c]>sc[by[f]])by[f]=c}
+ const by={};for(let c=0;c<n;c++){const f=map[c];if(!f||f.startsWith('x_'))continue;if(by[f]===undefined||sc[c]>sc[by[f]])by[f]=c}
  for(let c=0;c<n;c++){const f=map[c];if(f&&!f.startsWith('x_')&&by[f]!==c)map[c]='note'}
  /* "Responsável" é vendedor quando os valores batem com a equipe, senão é a pessoa de contato */
  for(let c=0;c<n;c++){if(map[c]=='contact'&&/respons/.test(nzs(hd[c]))){const vs=[...new Set(data.map(r=>nzs(r[c])).filter(Boolean))].slice(0,40);if(vs.length&&vs.filter(x=>imFindUser(x)).length/vs.length>=.5&&!Object.values(map).includes('resp'))map[c]='resp'}}
@@ -2384,7 +2384,7 @@ function imStage(v){v=nzs(v);if(!v)return '';const v0=v;const st=stages('crm');l
  s=st.filter(x=>nzs(x.n).length>3&&(v.includes(nzs(x.n))||nzs(x.n).includes(v)));return s.length==1?s[0].id:''}
 function imSource(v){const n=nzs(v);if(!n)return ['',''];const R=[[/indica/,'Indicação'],[/insta/,'Instagram'],[/site|formulario|landing|google|organico|seo|pagina/,'Site / formulário'],[/whats|zap/,'WhatsApp'],[/evento|feira|palestra|congresso/,'Evento'],[/prospec|frio|outbound|linkedin|cold|ligacao|lista/,'Prospecção ativa']];for(const [rx,s] of R)if(rx.test(n))return [s,''];return ['Outro',String(v).trim()]}
 function imSvcs(v){const out=[],rest=[];String(v||'').split(/[,;\/|+\n]|\se\s/).map(x=>x.trim()).filter(Boolean).forEach(t=>{const n=nzs(t);const R=[[/social|rede|conteudo|instagram|post/,'Social media'],[/trafego|ads|anuncio|midia paga|google ads|meta ads/,'Tráfego pago'],[/design|arte|identidade|logo|visual/,'Design'],[/video|audiovisual|reels|filmagem/,'Vídeo'],[/foto/,'Fotografia'],[/landing|site|pagina/,'Landing page'],[/copy|briefing|redacao|texto/,'Briefing e copy'],[/evento/,'Eventos']];const m=R.find(([rx])=>rx.test(n));if(m&&SVCS.includes(m[1])){if(!out.includes(m[1]))out.push(m[1])}else rest.push(t)});return [out.join(','),rest.join(', ')]}
-const imHandle=s=>{s=String(s||'').trim();const m=/instagram\.com\/([\w.]+)/i.exec(s);if(m)return '@'+m[1];s=s.replace(/^@+/,'').split(/[\s,;]/)[0];return /^[\w.]{2,30}$/.test(s)?'@'+s:''};
+const imHandle=s=>{s=String(s||'').trim();const m=/instagram\.com\/([\w.]+)/i.exec(s);if(m)return /^(p|reel|reels|tv|stories|explore|invites|accounts|share|direct|s|about|web)$/i.test(m[1])?'':'@'+m[1];s=s.replace(/^@+/,'').split(/[\s,;]/)[0];return /^[\w.]{2,30}$/.test(s)?'@'+s:''};
 const imCap=(s,n)=>{s=String(s||'').trim();return s.length>n?s.slice(0,n-1)+'…':s};
 /* ---------- tabelas ---------- */
 function imTable(file,sh,i){const rows=sh.rows.map(r=>(r||[]).map(x=>x==null?'':String(x).trim()));const hr=imHeaderRow(rows),tb={id:i,file,sheet:sh.sheet,rows,hr,use:true};
@@ -2403,7 +2403,7 @@ function imLead(tb,r,cx){const o={},extra=[],get=f=>{const c=Object.keys(tb.map)
  /* garimpa e-mail/telefone/Instagram escondidos em colunas sem destino */
  const loose=extra.map(x=>x[1]).concat(get('notes')).join(' ');if(!o.email){const m=imEmailRx.exec(loose);if(m)o.email=m[0].toLowerCase()}
  if(!o.phone){const m=/(\+?55\s?)?\(?\d{2}\)?\s?9?\d{4}[-\s]?\d{4}/.exec(loose);if(m){const p=imPhones(m[0]);if(p.length)o.phone=p[0]}}
- const hv=get('handle');if(hv){const h=imHandle(hv);if(h)o.handle=h;else extra.push(['Instagram',hv])}else{const m=/instagram\.com\/([\w.]+)/i.exec(loose);if(m)o.handle='@'+m[1]}
+ const hv=get('handle');if(hv){const h=imHandle(hv);if(h)o.handle=h;else extra.push(['Instagram',hv])}else{const m=/instagram\.com\/([\w.]+)/i.exec(loose);if(m){const h=imHandle(m[0]);if(h)o.handle=h}}
  const t=(k,n)=>{const v=get(k);if(v)o[k]=imCap(v,n)};t('contact',80);t('role',60);t('segment',80);
  let city=get('city');const uf=get('state');if(city&&uf&&!/[\/-]\s*[A-Za-z]{2}$/.test(city))city+=' / '+uf.toUpperCase();else if(!city&&uf)city=uf.toUpperCase();if(city)o.city=imCap(city,80);
  const sv=get('source');if(sv){const [s,orig]=imSource(sv);if(s)o.source=s;if(orig)extra.push(['Origem informada',orig])}
@@ -2427,14 +2427,14 @@ function imLead(tb,r,cx){const o={},extra=[],get=f=>{const c=Object.keys(tb.map)
  o.created=cd?new Date(cd+'T12:00:00').getTime():Date.now();o.createdBy=ME.uid;o.kind=o.kind||'recorrente';
  return o}
 /* duplicados: telefone, e-mail, Instagram ou nome igual */
-function imKeys(l){const k=[];const n=nzs(l.name);if(n)k.push('n:'+n);const p=String(l.phone||'').replace(/\D/g,'').slice(-9);if(p.length>=8)k.push('p:'+p);if(l.email)k.push('e:'+String(l.email).toLowerCase());if(l.handle)k.push('h:'+String(l.handle).toLowerCase().replace('@',''));return k}
+function imKeys(l){const k=[];const n=nzs(l.name);if(n)k.push('n:'+n);const p=String(l.phone||'').replace(/\D/g,'').slice(-9);if(p.length>=8)k.push('p:'+p);if(l.email&&!(p.length>=8))k.push('e:'+String(l.email).toLowerCase());if(l.handle)k.push('h:'+String(l.handle).toLowerCase().replace('@',''));return k}
 function imBuild(){const used=IM.tables.filter(t=>t.use),multi=IM.tables.filter(t=>t.use).length>1;const cx={o:IM.o,vm:IM.vm,multi};
  const idx={};L(D.crm).forEach(l=>imKeys(l).forEach(k=>{if(!idx[k])idx[k]=l.id}));const seen={};
  const res={add:[],dup:[],skip:0,upd:[],byStage:{}};
  for(const tb of used){imData(tb).forEach(r=>{const o=imLead(tb,r,cx);if(!o){res.skip++;return}
   const ks=imKeys(o);let ex=null,inFile=false;for(const k of ks){if(idx[k]){ex=idx[k];break}if(seen[k]){ex=seen[k];inFile=true;break}}
   if(ex&&IM.o.dup!='all'){res.dup.push({o,ex,inFile,tb});return}
-  const row={o,tb};res.add.push(row);ks.forEach(k=>{if(!seen[k])seen[k]=row})})}
+  const row={o,tb};res.add.push(row);ks.forEach(k=>{if(/^[nh]:/.test(k)&&!seen[k])seen[k]=row})})}
  res.add.forEach(x=>{res.byStage[x.o.stage]=(res.byStage[x.o.stage]||0)+1});return res}
 /* valores que precisam de conferência: etapas e vendedores que não foram reconhecidos */
 function imUnknown(){const st={},rs={};for(const tb of IM.tables.filter(t=>t.use)){const cs=Object.keys(tb.map).find(k=>tb.map[k]=='stage'),cr=Object.keys(tb.map).find(k=>tb.map[k]=='resp');
