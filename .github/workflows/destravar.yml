@@ -12,10 +12,10 @@ jobs:
           REPO: ${{ github.repository }}
           RUN: ${{ github.run_id }}
         run: |
-          for s in queued in_progress waiting pending; do
-            for id in $(gh api "repos/$REPO/actions/runs?status=$s&per_page=50" --jq '.workflow_runs[].id'); do
-              [ "$id" = "$RUN" ] && continue
-              echo "forçando cancelamento de $id"
-              gh api -X POST "repos/$REPO/actions/runs/$id/force-cancel" || true
-            done
+          for id in $(gh api "repos/$REPO/actions/runs?per_page=30" --jq '.workflow_runs[] | select(.status != "completed") | .id'); do
+            [ "$id" = "$RUN" ] && continue
+            st=$(gh api "repos/$REPO/actions/runs/$id" --jq '.status + " attempt=" + (.run_attempt|tostring) + " " + .name')
+            r1=$(gh api -X POST "repos/$REPO/actions/runs/$id/force-cancel" 2>&1 | head -c 200)
+            r2=$(gh api -X POST "repos/$REPO/actions/runs/$id/cancel" 2>&1 | head -c 200)
+            echo "::warning::$id [$st] force=[$r1] cancel=[$r2]"
           done
