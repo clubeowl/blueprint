@@ -1,0 +1,21 @@
+name: destravar
+on: workflow_dispatch
+permissions:
+  actions: write
+  contents: read
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN: ${{ github.run_id }}
+        run: |
+          for s in queued in_progress waiting pending; do
+            for id in $(gh api "repos/$REPO/actions/runs?status=$s&per_page=50" --jq '.workflow_runs[].id'); do
+              [ "$id" = "$RUN" ] && continue
+              echo "forçando cancelamento de $id"
+              gh api -X POST "repos/$REPO/actions/runs/$id/force-cancel" || true
+            done
+          done
